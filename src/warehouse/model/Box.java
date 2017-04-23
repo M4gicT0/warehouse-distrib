@@ -5,11 +5,15 @@ package warehouse.model;
  */
 public class Box {
 
+    public enum Type {
+        COTTON, FOOD, WOOD;
+    }
+
     private String id;
     private int itemsQty;
-    private String type;
+    private Type type;
 
-    public Box(String id, int itemsQty, String type) {
+    public Box(String id, int itemsQty, Type type) {
         this.id = id;
         this.itemsQty = itemsQty;
         this.type = type;
@@ -19,7 +23,7 @@ public class Box {
         return id;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
