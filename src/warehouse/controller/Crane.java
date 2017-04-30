@@ -1,6 +1,7 @@
 package warehouse.controller;
 
 import warehouse.ConveyorBelt;
+import warehouse.model.Box;
 import warehouse.model.Palette;
 
 import java.util.Observable;
@@ -11,7 +12,17 @@ import java.util.Observable;
 public class Crane implements Destination {
 
     private Palette palette;
+    private PackingStation packingStation;
+    private PickingStation pickingStation;
     private ConveyorBelt belt = ConveyorBelt.getInstance();
+
+    public void setPackingStation(PackingStation packingStation) {
+        this.packingStation = packingStation;
+    }
+
+    public void setPickingStation(PickingStation pickingStation) {
+        this.pickingStation = pickingStation;
+    }
 
     @Override
     public void process() {
@@ -33,5 +44,13 @@ public class Crane implements Destination {
                 process();
             }
         }
+    }
+
+    public void fetch(Box.Type type, int qty) {
+        Palette palette = StorageController.unload(type);
+        palette.setDestination(pickingStation);
+
+        //TODO: Check quantity and stuff
+        belt.put(palette);
     }
 }

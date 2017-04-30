@@ -9,13 +9,13 @@ import java.util.HashMap;
 public class OrderManifest {
 
     private Order order;
-    private HashMap<Box.Type, Integer> manifest;
+    private HashMap<Box.Type, Integer> list;
     private Date dueDate;
     private Date createdAt;
 
-    public OrderManifest(HashMap<Box.Type, Integer> manifest, Date dueDate) {
+    public OrderManifest(HashMap<Box.Type, Integer> list, Date dueDate) {
         order = null;
-        this.manifest = manifest;
+        this.list = list;
         this.dueDate = dueDate;
         createdAt = new Date();
     }
@@ -28,7 +28,7 @@ public class OrderManifest {
         return order;
     }
 
-    public HashMap<Box.Type, Integer> getManifest() {
-        return manifest;
+    public HashMap<Box.Type, Integer> getList() {
+        return list;
     }
 }

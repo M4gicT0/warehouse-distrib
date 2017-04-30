@@ -42,6 +42,10 @@ public class Palette {
         return destination;
     }
 
+    public void setDestination(Destination destination) {
+
+    }
+
     public void addBox(Box box) throws Exception {
         if ((boxesQty + 1) >= CAPACITY)
             throw new Exception("Palette full !");

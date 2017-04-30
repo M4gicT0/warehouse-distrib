@@ -16,9 +16,10 @@ public class PackingStation implements Destination {
     private Crane crane;
     private ConveyorBelt belt;
 
-    public PackingStation() {
+    public PackingStation(Crane crane) {
         boxes = new ArrayList<>();
-        crane = new Crane();
+        this.crane = crane;
+        this.crane.setPackingStation(this);
         belt = ConveyorBelt.getInstance();
     }
 
