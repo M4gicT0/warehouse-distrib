@@ -29,6 +29,15 @@ public class Palette {
         return boxesQty;
     }
 
+    public boolean has(Box.Type type, int qty) {
+        for (Box box : boxes) {
+            if (box.getType() == type)
+                qty--;
+        }
+
+        return (qty <= 0);
+    }
+
     public Destination getDestination() {
         return destination;
     }
@@ -41,14 +50,16 @@ public class Palette {
         boxesQty++;
     }
 
-    public ArrayList<Box> removeBoxes(int number) throws Exception {
-        if ((number > boxesQty))
+    public ArrayList<Box> removeBoxes(Box.Type type, int number) throws Exception {
+        if (!has(type, number))
             throw new Exception("Not enough boxes on palette !");
 
         ArrayList<Box> order = new ArrayList<>();
 
-        for (int i = 0; i < number; i++)
-            order.add(boxes.remove(1)); //Probably wrong
+        for (int i = 0; i < number; i++) {
+            if (boxes.get(i).getType() == type)
+                order.add(boxes.remove(i));
+        }
 
         return order;
     }
