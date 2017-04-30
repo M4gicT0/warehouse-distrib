@@ -32,7 +32,7 @@ public class Order {
         return processed_at;
     }
 
-    public void setBoxes(ArrayList<Box> boxes) {
-        this.boxes = boxes;
+    public void addBoxes(ArrayList<Box> boxes) {
+        this.boxes.addAll(boxes);
     }
 }
