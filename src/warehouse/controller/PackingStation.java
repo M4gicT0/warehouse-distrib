@@ -5,6 +5,7 @@ import warehouse.model.Box;
 import warehouse.model.Palette;
 
 import java.util.ArrayList;
+import java.util.Observable;
 
 /**
  * Created by Theo on 4/23/17.
@@ -48,5 +49,10 @@ public class PackingStation implements Destination {
     @Override
     public void log(String message) {
         //TODO : log in the system
+    }
+
+    @Override
+    public void update(Observable observable, Object o) {
+
     }
 }
