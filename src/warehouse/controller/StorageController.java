@@ -15,7 +15,7 @@ public abstract class StorageController {
         // TODO: Implement algorithm (not required by assignment)
     }
 
-    static Palette unload(Box.Type type) {
+    static Palette unload(Box.Type type, int qty) {
         // TODO: Implement algorithm not (required by assignment)
 
         return null;

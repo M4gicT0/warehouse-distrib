@@ -49,7 +49,7 @@ public class PackingStation implements Destination {
 
     @Override
     public void log(String message) {
-        //TODO : log in the system
+        System.out.println(message);
     }
 
     @Override

@@ -12,7 +12,7 @@ import java.util.Observable;
 public class Crane implements Destination {
 
     private Palette palette;
-    private PackingStation packingStation;
+    private PackingStation packingStation; //Just in case we need to send to the packing station
     private PickingStation pickingStation;
     private ConveyorBelt belt = ConveyorBelt.getInstance();
 
@@ -33,7 +33,7 @@ public class Crane implements Destination {
 
     @Override
     public void log(String message) {
-        //TODO : log in the system
+        System.out.println(message);
     }
 
     @Override
@@ -47,10 +47,8 @@ public class Crane implements Destination {
     }
 
     public void fetch(Box.Type type, int qty) {
-        Palette palette = StorageController.unload(type);
+        Palette palette = StorageController.unload(type, qty);
         palette.setDestination(pickingStation);
-
-        //TODO: Check quantity and stuff
         belt.put(palette);
     }
 }

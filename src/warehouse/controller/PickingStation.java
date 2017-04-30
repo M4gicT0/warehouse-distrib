@@ -13,6 +13,8 @@ import java.util.Set;
 public class PickingStation implements Destination {
 
     private Palette palette;
+    private Box.Type processingType;
+    private int processingQty;
     private ConveyorBelt belt = ConveyorBelt.getInstance();
     private Crane crane;
 
@@ -24,12 +26,22 @@ public class PickingStation implements Destination {
     @Override
     public void process() {
         //Process each received palette: take the desired boxes and put them in a truck
-        //palette.removeBoxes();
+        try {
+            palette.removeBoxes(processingType, processingQty); //Process [TYPE -> QTY]
+
+            if (palette.getBoxesQty() > 0) { //Send it back to the crane if not empty
+                palette.setDestination(crane);
+                belt.put(palette);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void log(String message) {
-
+        System.out.println(message);
     }
 
     @Override
@@ -47,9 +59,9 @@ public class PickingStation implements Destination {
 
         for (Box.Type boxType : types) {
             int quantity = manifest.getList().get(boxType);
-
-            for (int i = 0; i < quantity; i++)
-                crane.fetch(boxType, quantity);
+            processingType = boxType;
+            processingQty = quantity;
+            crane.fetch(boxType, quantity);
         }
     }
 }
