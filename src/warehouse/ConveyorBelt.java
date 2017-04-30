@@ -2,7 +2,7 @@ package warehouse;
 
 import warehouse.model.Palette;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.Observable;
 
 /**
@@ -11,14 +11,14 @@ import java.util.Observable;
 public class ConveyorBelt extends Observable {
 
     private static ConveyorBelt instance = new ConveyorBelt();
-    private LinkedList<Palette> palettes;
+    private ArrayList<Palette> palettes;
 
     public static ConveyorBelt getInstance() {
         return instance;
     }
 
     private ConveyorBelt() {
-        palettes = new LinkedList<>();
+        palettes = new ArrayList<>();
     }
 
     public void put(Palette palette) {
@@ -26,11 +26,15 @@ public class ConveyorBelt extends Observable {
         this.notifyObservers();
     }
 
-    public Palette pop() {
-        return palettes.pop();
+    public Palette get(int i) {
+        return palettes.get(i);
     }
 
-    public Palette peek() {
-        return palettes.peek();
+    public Palette remove(int i) {
+        return palettes.remove(i);
+    }
+
+    public int getPalettesNumber() {
+        return palettes.size();
     }
 }

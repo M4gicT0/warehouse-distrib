@@ -9,13 +9,15 @@ import warehouse.model.Palette;
 public abstract class StorageController {
 
     private int freeSlots;
-    private int [][]slotsMatrix;
+    private int [][]slotsMatrix; //slotsMatrix[AisleNumber][cell]
 
     static void load(Palette palette) {
-
+        // TODO: Implement algorithm (not required by assignment)
     }
 
     static Palette unload(Box.Type type) {
+        // TODO: Implement algorithm not (required by assignment)
+
         return null;
     }
 }

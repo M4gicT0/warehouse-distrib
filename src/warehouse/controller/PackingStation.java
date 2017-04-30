@@ -53,6 +53,7 @@ public class PackingStation implements Destination {
 
     @Override
     public void update(Observable observable, Object o) {
-
+        // Nothing happens here because it shouldn't receive any palette
+        // from the conveyor belt
     }
 }

@@ -1,5 +1,6 @@
 package warehouse.controller;
 
+import warehouse.ConveyorBelt;
 import warehouse.model.Palette;
 
 import java.util.Observable;
@@ -10,6 +11,7 @@ import java.util.Observable;
 public class Crane implements Destination {
 
     private Palette palette;
+    private ConveyorBelt belt = ConveyorBelt.getInstance();
 
     @Override
     public void process() {
@@ -25,11 +27,11 @@ public class Crane implements Destination {
 
     @Override
     public void update(Observable observable, Object o) {
-        Palette p = (Palette) o;
-
-        if (p.getDestination() == this) {
-            palette = p;
-            process();
+        for (int i = 0; i < belt.getPalettesNumber(); i++) {
+            if (belt.get(i).getDestination() == this) {
+                palette = belt.remove(i);
+                process();
+            }
         }
     }
 }
