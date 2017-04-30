@@ -1,16 +1,52 @@
 package warehouse.controller;
 
+import warehouse.ConveyorBelt;
+import warehouse.model.Box;
+import warehouse.model.Palette;
+
+import java.util.ArrayList;
+
 /**
  * Created by Theo on 4/23/17.
  */
 public class PackingStation implements Destination {
-    @Override
-    public void process() {
 
+    private ArrayList<Box> boxes;
+    private Crane crane;
+    private ConveyorBelt belt;
+
+    public PackingStation() {
+        boxes = new ArrayList<>();
+        crane = new Crane();
+        belt = ConveyorBelt.getInstance();
+    }
+
+    public void receiveTruck(ArrayList<Box> load) {
+        boxes.addAll(load);
     }
 
     @Override
-    public void log() {
+    public void process() {
+        Palette palette = new Palette("0", crane);
 
+        /* TODO: Find an alternative solution to create palettes without using a capacity */
+        for (Box box : boxes) {
+            if (palette.getCapacity() < (palette.getBoxesQty() + 1)) {
+                try {
+                    palette.addBox(box);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                belt.put(palette);
+                palette = new Palette(palette.getId().concat("0"), crane);
+                log("New palette");
+            }
+        }
+    }
+
+    @Override
+    public void log(String message) {
+        //TODO : log in the system
     }
 }

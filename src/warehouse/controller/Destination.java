@@ -6,5 +6,5 @@ package warehouse.controller;
 public interface Destination {
 
     void process();
-    void log();
+    void log(String message);
 }

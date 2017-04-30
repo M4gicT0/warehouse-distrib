@@ -50,6 +50,10 @@ public class Palette {
         boxesQty++;
     }
 
+    public int getCapacity() {
+        return CAPACITY;
+    }
+
     public ArrayList<Box> removeBoxes(Box.Type type, int number) throws Exception {
         if (!has(type, number))
             throw new Exception("Not enough boxes on palette !");
