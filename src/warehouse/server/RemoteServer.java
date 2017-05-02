@@ -33,6 +33,11 @@ public class RemoteServer extends UnicastRemoteObject implements RemoteInterface
     }
 
     @Override
+    public String sayHello() {
+        return "Hello fellow !";
+    }
+
+    @Override
     public void load(Palette palette) {
 
     }

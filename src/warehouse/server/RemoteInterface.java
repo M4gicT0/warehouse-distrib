@@ -10,6 +10,7 @@ import java.rmi.Remote;
  */
 public interface RemoteInterface extends Remote {
 
+    String sayHello();
     void load(Palette palette);
     Palette unload(Box.Type type, int quantity);
 }
