@@ -23,7 +23,7 @@ public class RemoteServer extends UnicastRemoteObject implements RemoteInterface
 
             // Bind the remote object's stub in the registry
             Registry registry = LocateRegistry.getRegistry();
-            registry.bind("RemoteInterface", stub);
+            registry.bind("WarehouseServer", stub);
 
             System.err.println("Server ready");
         } catch (Exception e) {
