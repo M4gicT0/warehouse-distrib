@@ -6,7 +6,7 @@ package warehouse.model;
 public class Box {
 
     public enum Type {
-        COTTON, FOOD, WOOD;
+        COTTON, FOOD, WOOD
     }
 
     private String id;
