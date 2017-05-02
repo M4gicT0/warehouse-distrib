@@ -1,6 +1,6 @@
 package warehouse.controller;
 
-import warehouse.ConveyorBelt;
+import warehouse.utils.ConveyorBelt;
 import warehouse.model.Box;
 import warehouse.model.Palette;
 
