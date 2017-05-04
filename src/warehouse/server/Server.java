@@ -3,27 +3,24 @@ package warehouse.server;
 import warehouse.model.Box;
 import warehouse.model.Palette;
 
+import java.rmi.Naming;
 import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
 /**
  * Created by transpalette on 5/2/17.
  */
-public class RemoteServer extends UnicastRemoteObject implements RemoteInterface {
+public class Server extends UnicastRemoteObject implements RemoteInterface {
 
-    public RemoteServer() throws RemoteException {
+
+    protected Server() throws RemoteException {
     }
 
     public static void main(String args[]) {
         try {
-            RemoteServer obj = new RemoteServer();
-            RemoteInterface stub = (RemoteInterface) UnicastRemoteObject.exportObject(obj, 0);
+            Server warehouse = new Server();
+            Naming.rebind("WarehouseDistrib", warehouse);
 
-            // Bind the remote object's stub in the registry
-            Registry registry = LocateRegistry.getRegistry();
-            registry.bind("WarehouseServer", stub);
 
             System.err.println("Server ready");
         } catch (Exception e) {
