@@ -1,9 +1,9 @@
-package warehouse.server;
+package warehouse;
 
 import warehouse.model.Box;
 import warehouse.model.Palette;
+import warehouse.shared.RemoteInterface;
 
-import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -19,11 +19,12 @@ public class Server extends UnicastRemoteObject implements RemoteInterface {
     }
 
     public static void main(String args[]) {
+
         try {
-            System.out.println("Starting server...");
-            Registry reg = LocateRegistry.createRegistry(1099);
+            System.out.println("Starting shared...");
             RemoteInterface rmiServer = new Server();
-            Naming.rebind("WarehouseDistrib", rmiServer);
+            Registry registry = LocateRegistry.createRegistry(1099);
+            registry.rebind("WarehouseDistrib", rmiServer);
             System.out.println("Server started.");
         } catch (Exception e) {
             System.err.println("Server exception: " + e.toString());

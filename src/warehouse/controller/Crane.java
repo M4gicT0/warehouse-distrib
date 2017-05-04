@@ -3,13 +3,14 @@ package warehouse.controller;
 import warehouse.utils.ConveyorBelt;
 import warehouse.model.Box;
 import warehouse.model.Palette;
+import warehouse.utils.Destination;
 
 import java.util.Observable;
 
 /**
  * Created by Theo on 4/23/17.
  */
-public class Crane implements Destination {
+public class Crane implements Station {
 
     private Palette palette;
     private PackingStation packingStation; //Just in case we need to send to the packing station
@@ -39,7 +40,7 @@ public class Crane implements Destination {
     @Override
     public void update(Observable observable, Object o) {
         for (int i = 0; i < belt.getPalettesNumber(); i++) {
-            if (belt.get(i).getDestination() == this) {
+            if (belt.get(i).getDestination() == Destination.CRANE) {
                 palette = belt.remove(i);
                 process();
             }

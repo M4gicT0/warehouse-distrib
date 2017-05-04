@@ -5,13 +5,15 @@ import warehouse.model.Box;
 import warehouse.model.Order;
 import warehouse.model.OrderManifest;
 import warehouse.model.Palette;
+import warehouse.utils.Destination;
+
 import java.util.Observable;
 import java.util.Set;
 
 /**
  * Created by Theo on 4/23/17.
  */
-public class PickingStation implements Destination {
+public class PickingStation implements Station {
 
     private Palette palette;
     private Box.Type processingType;
@@ -49,7 +51,7 @@ public class PickingStation implements Destination {
     @Override
     public void update(Observable observable, Object o) {
         for (int i = 0; i < belt.getPalettesNumber(); i++) {
-            if (belt.get(i).getDestination() == this) {
+            if (belt.get(i).getDestination() == Destination.PICKING_STATION) {
                 palette = belt.remove(i);
                 process();
             }

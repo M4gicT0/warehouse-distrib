@@ -1,6 +1,7 @@
 package warehouse.model;
 
-import warehouse.controller.Destination;
+import warehouse.controller.Station;
+import warehouse.utils.Destination;
 
 import java.util.ArrayList;
 
@@ -42,7 +43,7 @@ public class Palette {
         return destination;
     }
 
-    public void setDestination(Destination destination) {
+    public void setDestination(Station destination) {
 
     }
 

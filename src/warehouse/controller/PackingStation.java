@@ -10,7 +10,7 @@ import java.util.Observable;
 /**
  * Created by Theo on 4/23/17.
  */
-public class PackingStation implements Destination {
+public class PackingStation implements Station {
 
     private ArrayList<Box> boxes;
     private Crane crane;

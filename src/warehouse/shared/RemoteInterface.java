@@ -1,4 +1,4 @@
-package warehouse.server;
+package warehouse.shared;
 
 import warehouse.model.Box;
 import warehouse.model.Palette;
