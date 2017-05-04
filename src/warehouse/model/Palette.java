@@ -43,8 +43,8 @@ public class Palette {
         return destination;
     }
 
-    public void setDestination(Station destination) {
-
+    public void setDestination(Destination destination) {
+        this.destination = destination;
     }
 
     public void addBox(Box box) throws Exception {
