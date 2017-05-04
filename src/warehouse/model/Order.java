@@ -11,7 +11,7 @@ public class Order {
     private String id;
     private Date created_at;
     private Date processed_at;
-    private ArrayList<Box> boxes;
+    private ArrayList<RemoteBox> boxes;
 
     public Order(String id) {
         this.id = id;
@@ -32,7 +32,7 @@ public class Order {
         return processed_at;
     }
 
-    public void addBoxes(ArrayList<Box> boxes) {
+    public void addBoxes(ArrayList<RemoteBox> boxes) {
         this.boxes.addAll(boxes);
     }
 }

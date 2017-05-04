@@ -1,21 +1,33 @@
 package warehouse;
 
-import warehouse.model.Box;
-import warehouse.model.Palette;
+import warehouse.controller.Crane;
+import warehouse.controller.PackingStation;
+import warehouse.controller.PickingStation;
+import warehouse.model.RemoteBox;
+import warehouse.model.RemotePalette;
 import warehouse.shared.RemoteInterface;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 /**
  * Created by transpalette on 5/2/17.
  */
 public class Server extends UnicastRemoteObject implements RemoteInterface {
 
+    PackingStation packingStation;
+    PickingStation pickingStation;
+    Crane crane;
+
     protected Server() throws RemoteException {
         super();
+
+        crane = new Crane();
+        packingStation = new PackingStation(crane);
+        pickingStation = new PickingStation(crane);
     }
 
     public static void main(String args[]) {
@@ -38,12 +50,15 @@ public class Server extends UnicastRemoteObject implements RemoteInterface {
     }
 
     @Override
-    public void load(Palette palette) {
+    public void receive(ArrayList<RemoteBox> truck) {
+        //Receive at packing station
 
+        packingStation.receiveTruck(truck);
+        packingStation.process();
     }
 
     @Override
-    public Palette unload(Box.Type type, int quantity) {
+    public RemotePalette unload(RemoteBox.Type type, int quantity) {
         return null;
     }
 }

@@ -1,10 +1,10 @@
 package warehouse.controller;
 
 import warehouse.utils.ConveyorBelt;
-import warehouse.model.Box;
+import warehouse.model.RemoteBox;
 import warehouse.model.Order;
 import warehouse.model.OrderManifest;
-import warehouse.model.Palette;
+import warehouse.model.RemotePalette;
 import warehouse.utils.Destination;
 
 import java.util.Observable;
@@ -15,8 +15,8 @@ import java.util.Set;
  */
 public class PickingStation implements Station {
 
-    private Palette palette;
-    private Box.Type processingType;
+    private RemotePalette palette;
+    private RemoteBox.Type processingType;
     private int processingQty;
     private ConveyorBelt belt = ConveyorBelt.getInstance();
     private Crane crane;
@@ -34,7 +34,7 @@ public class PickingStation implements Station {
             order.addBoxes(palette.removeBoxes(processingType, processingQty)); //Process [TYPE -> QTY]
 
             if (palette.getBoxesQty() > 0) { //Send it back to the crane if not empty
-                palette.setDestination(crane);
+                palette.setDestination(Destination.CRANE);
                 belt.put(palette);
             }
 
@@ -59,10 +59,10 @@ public class PickingStation implements Station {
     }
 
     public void processOrder(OrderManifest manifest) {
-        Set<Box.Type> types = manifest.getList().keySet();
+        Set<RemoteBox.Type> types = manifest.getList().keySet();
         order = new Order("randomId");
 
-        for (Box.Type boxType : types) {
+        for (RemoteBox.Type boxType : types) {
             int quantity = manifest.getList().get(boxType);
             processingType = boxType;
             processingQty = quantity;

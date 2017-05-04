@@ -1,8 +1,8 @@
 package warehouse.controller;
 
 import warehouse.utils.ConveyorBelt;
-import warehouse.model.Box;
-import warehouse.model.Palette;
+import warehouse.model.RemoteBox;
+import warehouse.model.RemotePalette;
 import warehouse.utils.Destination;
 
 import java.util.Observable;
@@ -12,7 +12,7 @@ import java.util.Observable;
  */
 public class Crane implements Station {
 
-    private Palette palette;
+    private RemotePalette palette;
     private PackingStation packingStation; //Just in case we need to send to the packing station
     private PickingStation pickingStation;
     private ConveyorBelt belt = ConveyorBelt.getInstance();
@@ -47,9 +47,9 @@ public class Crane implements Station {
         }
     }
 
-    public void fetch(Box.Type type, int qty) {
-        Palette palette = StorageController.unload(type, qty);
-        palette.setDestination(pickingStation);
+    public void fetch(RemoteBox.Type type, int qty) {
+        RemotePalette palette = StorageController.unload(type, qty);
+        palette.setDestination(Destination.PICKING_STATION);
         belt.put(palette);
     }
 }

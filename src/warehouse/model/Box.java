@@ -1,33 +1,15 @@
 package warehouse.model;
 
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
 /**
- * Created by Theo on 4/23/17.
+ * Created by transpalette on 5/4/17.
  */
-public class Box {
+public interface Box extends Remote {
 
-    public enum Type {
-        COTTON, FOOD, WOOD
-    }
+    String getId() throws RemoteException;
+    BoxType getType() throws RemoteException;
+    int getItemsQty() throws Exception;
 
-    private String id;
-    private int itemsQty;
-    private Type type;
-
-    public Box(String id, int itemsQty, Type type) {
-        this.id = id;
-        this.itemsQty = itemsQty;
-        this.type = type;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public Type getType() {
-        return type;
-    }
-
-    public int getItemsQty() {
-        return itemsQty;
-    }
 }

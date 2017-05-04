@@ -1,9 +1,11 @@
 package warehouse.controller;
 
 import warehouse.utils.ConveyorBelt;
-import warehouse.model.Box;
-import warehouse.model.Palette;
+import warehouse.model.RemoteBox;
+import warehouse.model.RemotePalette;
+import warehouse.utils.Destination;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Observable;
 
@@ -12,7 +14,7 @@ import java.util.Observable;
  */
 public class PackingStation implements Station {
 
-    private ArrayList<Box> boxes;
+    private ArrayList<RemoteBox> boxes;
     private Crane crane;
     private ConveyorBelt belt;
 
@@ -23,16 +25,21 @@ public class PackingStation implements Station {
         belt = ConveyorBelt.getInstance();
     }
 
-    public void receiveTruck(ArrayList<Box> load) {
+    public void receiveTruck(ArrayList<RemoteBox> load) {
         boxes.addAll(load);
     }
 
     @Override
     public void process() {
-        Palette palette = new Palette("0", crane);
+        RemotePalette palette = null;
+        try {
+            palette = new RemotePalette("0", Destination.CRANE);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
 
         /* TODO: Find an alternative solution to create palettes without using a capacity */
-        for (Box box : boxes) {
+        for (RemoteBox box : boxes) {
             if (palette.getCapacity() < (palette.getBoxesQty() + 1)) {
                 try {
                     palette.addBox(box);
@@ -41,8 +48,12 @@ public class PackingStation implements Station {
                 }
             } else {
                 belt.put(palette);
-                palette = new Palette(palette.getId().concat("0"), crane);
-                log("New palette");
+                try {
+                    palette = new RemotePalette(palette.getId().concat("0"), Destination.CRANE);
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
+                log("New palette sent to the crane !");
             }
         }
     }
