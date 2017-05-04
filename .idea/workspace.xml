@@ -2,39 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84f71878-100f-4acf-9b88-72fa1d783569" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/Crane.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/Crane.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/Destination.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/Destination.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/PackingStation.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/PackingStation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/PickingStation.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/PickingStation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/StorageController.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/StorageController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Box$Type.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Box$Type.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Box.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Box.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Order.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Order.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/OrderManifest.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/OrderManifest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Palette.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Palette.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/server/RemoteInterface.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/server/RemoteInterface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/server/Server.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/server/Server.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/utils/ConveyorBelt.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/utils/ConveyorBelt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/description.html" afterPath="$PROJECT_DIR$/.idea/description.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/project-template.xml" afterPath="$PROJECT_DIR$/.idea/project-template.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/controller/Crane.java" afterPath="$PROJECT_DIR$/src/warehouse/controller/Crane.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/controller/Destination.java" afterPath="$PROJECT_DIR$/src/warehouse/controller/Destination.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/controller/PackingStation.java" afterPath="$PROJECT_DIR$/src/warehouse/controller/PackingStation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/controller/PickingStation.java" afterPath="$PROJECT_DIR$/src/warehouse/controller/PickingStation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/controller/StorageController.java" afterPath="$PROJECT_DIR$/src/warehouse/controller/StorageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/model/Box.java" afterPath="$PROJECT_DIR$/src/warehouse/model/Box.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/model/Order.java" afterPath="$PROJECT_DIR$/src/warehouse/model/Order.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/model/OrderManifest.java" afterPath="$PROJECT_DIR$/src/warehouse/model/OrderManifest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/model/Palette.java" afterPath="$PROJECT_DIR$/src/warehouse/model/Palette.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/server/RemoteInterface.java" afterPath="$PROJECT_DIR$/src/warehouse/server/RemoteInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/server/Server.java" afterPath="$PROJECT_DIR$/src/warehouse/server/Server.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/utils/ConveyorBelt.java" afterPath="$PROJECT_DIR$/src/warehouse/utils/ConveyorBelt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warehouse-distrib.iml" afterPath="$PROJECT_DIR$/warehouse-distrib.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -111,8 +79,8 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/warehouse/server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="21" column="44" lean-forward="false" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+            <state relative-caret-position="520">
+              <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -516,12 +484,12 @@
       <workItem from="1493719258062" duration="90000" />
       <workItem from="1493913799474" duration="568000" />
       <workItem from="1493914448930" duration="1427000" />
-      <workItem from="1493915972178" duration="1108000" />
+      <workItem from="1493915972178" duration="1975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23455000" />
+    <option name="totallyTimeSpent" value="24322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="960" height="1053" extended-state="4" />
@@ -1025,8 +993,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/warehouse/server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="21" column="44" lean-forward="false" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        <state relative-caret-position="520">
+          <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

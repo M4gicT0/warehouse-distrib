@@ -14,7 +14,6 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class Server extends UnicastRemoteObject implements RemoteInterface {
 
-
     protected Server() throws RemoteException {
         super();
     }
