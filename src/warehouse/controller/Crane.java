@@ -3,9 +3,11 @@ package warehouse.controller;
 import warehouse.model.BoxType;
 import warehouse.model.Palette;
 import warehouse.utils.ConveyorBelt;
+import warehouse.utils.DatabaseManager;
 import warehouse.utils.Destination;
 
 import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.Observable;
 
 /**
@@ -15,9 +17,17 @@ public class Crane implements Station {
 
     private Palette palette;
     private ConveyorBelt belt;
+    private DatabaseManager db;
 
     public Crane() {
          belt = ConveyorBelt.getInstance();
+         db = new DatabaseManager();
+        try {
+            //db.dropTables();
+            db.createTables();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
