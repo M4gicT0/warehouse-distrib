@@ -32,7 +32,7 @@ public class DatabaseManager {
         return statement.execute();
     }
 
-    /* Insert each box of the palette with their palette_id into aisle numbeer aisleNumber
+    /* Insert each box of the palette with their palette_id into aisle number aisleNumber
      * and at cell number cell[x][y].
      */
     public boolean insertPalette(Palette palette, int aisleNumber, int x, int y) throws RemoteException, SQLException {
@@ -58,6 +58,7 @@ public class DatabaseManager {
 
         return success;
     }
+
 
     public boolean fetchPalette(BoxType type) {
         return false;
