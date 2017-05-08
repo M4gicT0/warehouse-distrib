@@ -1,6 +1,6 @@
 package warehouse.utils;
 
-import warehouse.model.RemotePalette;
+import warehouse.model.Palette;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -11,7 +11,7 @@ import java.util.Observable;
 public class ConveyorBelt extends Observable {
 
     private static ConveyorBelt instance = new ConveyorBelt();
-    private ArrayList<RemotePalette> palettes;
+    private ArrayList<Palette> palettes;
 
     public static ConveyorBelt getInstance() {
         return instance;
@@ -21,16 +21,16 @@ public class ConveyorBelt extends Observable {
         palettes = new ArrayList<>();
     }
 
-    public void put(RemotePalette palette) {
+    public void put(Palette palette) {
         palettes.add(palette);
         this.notifyObservers();
     }
 
-    public RemotePalette get(int i) {
+    public Palette get(int i) {
         return palettes.get(i);
     }
 
-    public RemotePalette remove(int i) {
+    public Palette remove(int i) {
         return palettes.remove(i);
     }
 

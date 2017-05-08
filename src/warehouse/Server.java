@@ -3,8 +3,9 @@ package warehouse;
 import warehouse.controller.Crane;
 import warehouse.controller.PackingStation;
 import warehouse.controller.PickingStation;
-import warehouse.model.RemoteBox;
-import warehouse.model.RemotePalette;
+import warehouse.model.Box;
+import warehouse.model.BoxType;
+import warehouse.model.Palette;
 import warehouse.shared.RemoteInterface;
 
 import java.rmi.RemoteException;
@@ -50,7 +51,7 @@ public class Server extends UnicastRemoteObject implements RemoteInterface {
     }
 
     @Override
-    public void receive(ArrayList<RemoteBox> truck) {
+    public void receive(ArrayList<Box> truck) {
         //Receive at packing station
 
         packingStation.receiveTruck(truck);
@@ -58,7 +59,7 @@ public class Server extends UnicastRemoteObject implements RemoteInterface {
     }
 
     @Override
-    public RemotePalette unload(RemoteBox.Type type, int quantity) {
+    public Palette unload(BoxType type, int quantity) {
         return null;
     }
 }

@@ -1,8 +1,6 @@
 package warehouse.model;
 
-import java.io.Serializable;
 import java.rmi.RemoteException;
-import java.rmi.server.RemoteObject;
 import java.rmi.server.UnicastRemoteObject;
 
 /**
@@ -10,13 +8,9 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class RemoteBox extends UnicastRemoteObject implements Box {
 
-    public enum Type {
-        COTTON, FOOD, WOOD
-    }
-
     private String id;
     private int itemsQty;
-    private Type type;
+    private BoxType type;
 
     public RemoteBox(String id, int itemsQty, BoxType type) throws RemoteException {
         super();

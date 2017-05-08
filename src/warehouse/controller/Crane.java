@@ -1,10 +1,11 @@
 package warehouse.controller;
 
+import warehouse.model.BoxType;
+import warehouse.model.Palette;
 import warehouse.utils.ConveyorBelt;
-import warehouse.model.RemoteBox;
-import warehouse.model.RemotePalette;
 import warehouse.utils.Destination;
 
+import java.rmi.RemoteException;
 import java.util.Observable;
 
 /**
@@ -12,7 +13,7 @@ import java.util.Observable;
  */
 public class Crane implements Station {
 
-    private RemotePalette palette;
+    private Palette palette;
     private PackingStation packingStation; //Just in case we need to send to the packing station
     private PickingStation pickingStation;
     private ConveyorBelt belt = ConveyorBelt.getInstance();
@@ -40,15 +41,19 @@ public class Crane implements Station {
     @Override
     public void update(Observable observable, Object o) {
         for (int i = 0; i < belt.getPalettesNumber(); i++) {
-            if (belt.get(i).getDestination() == Destination.CRANE) {
-                palette = belt.remove(i);
-                process();
+            try {
+                if (belt.get(i).getDestination() == Destination.CRANE) {
+                    palette = belt.remove(i);
+                    process();
+                }
+            } catch (RemoteException e) {
+                e.printStackTrace();
             }
         }
     }
 
-    public void fetch(RemoteBox.Type type, int qty) {
-        RemotePalette palette = StorageController.unload(type, qty);
+    public void fetch(BoxType type, int qty) throws RemoteException {
+        Palette palette = StorageController.unload(type, qty);
         palette.setDestination(Destination.PICKING_STATION);
         belt.put(palette);
     }

@@ -2,9 +2,7 @@ package warehouse.model;
 
 import warehouse.utils.Destination;
 
-import java.io.Serializable;
 import java.rmi.RemoteException;
-import java.rmi.server.RemoteObject;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
@@ -17,7 +15,7 @@ public class RemotePalette extends UnicastRemoteObject implements Palette {
     private int boxesQty;
     private final int CAPACITY = 16;
     private Destination destination;
-    private ArrayList<RemoteBox> boxes;
+    private ArrayList<Box> boxes;
 
     public RemotePalette(String id, Destination destination) throws RemoteException {
         super();
@@ -34,8 +32,8 @@ public class RemotePalette extends UnicastRemoteObject implements Palette {
         return boxesQty;
     }
 
-    public boolean has(RemoteBox.Type type, int qty) {
-        for (RemoteBox box : boxes) {
+    public boolean has(BoxType type, int qty) throws RemoteException {
+        for (Box box : boxes) {
             if (box.getType() == type)
                 qty--;
         }
@@ -51,9 +49,9 @@ public class RemotePalette extends UnicastRemoteObject implements Palette {
         this.destination = destination;
     }
 
-    public void addBox(RemoteBox box) throws Exception {
+    public void addBox(Box box) throws RemoteException {
         if ((boxesQty + 1) >= CAPACITY)
-            throw new Exception("RemotePalette full !");
+            throw new RemoteException("RemotePalette full !");
 
         boxes.add(box);
         boxesQty++;
@@ -63,11 +61,11 @@ public class RemotePalette extends UnicastRemoteObject implements Palette {
         return CAPACITY;
     }
 
-    public ArrayList<RemoteBox> removeBoxes(RemoteBox.Type type, int number) throws Exception {
+    public ArrayList<Box> removeBoxes(BoxType type, int number) throws RemoteException {
         if (!has(type, number))
-            throw new Exception("Not enough boxes on palette !");
+            throw new RemoteException("Not enough boxes on palette !");
 
-        ArrayList<RemoteBox> order = new ArrayList<>();
+        ArrayList<Box> order = new ArrayList<>();
 
         for (int i = 0; i < number; i++) {
             if (boxes.get(i).getType() == type)

@@ -1,12 +1,10 @@
 package warehouse.controller;
 
+import warehouse.model.*;
 import warehouse.utils.ConveyorBelt;
-import warehouse.model.RemoteBox;
-import warehouse.model.Order;
-import warehouse.model.OrderManifest;
-import warehouse.model.RemotePalette;
 import warehouse.utils.Destination;
 
+import java.rmi.RemoteException;
 import java.util.Observable;
 import java.util.Set;
 
@@ -15,8 +13,8 @@ import java.util.Set;
  */
 public class PickingStation implements Station {
 
-    private RemotePalette palette;
-    private RemoteBox.Type processingType;
+    private Palette palette;
+    private BoxType processingType;
     private int processingQty;
     private ConveyorBelt belt = ConveyorBelt.getInstance();
     private Crane crane;
@@ -51,18 +49,22 @@ public class PickingStation implements Station {
     @Override
     public void update(Observable observable, Object o) {
         for (int i = 0; i < belt.getPalettesNumber(); i++) {
-            if (belt.get(i).getDestination() == Destination.PICKING_STATION) {
-                palette = belt.remove(i);
-                process();
+            try {
+                if (belt.get(i).getDestination() == Destination.PICKING_STATION) {
+                    palette = belt.remove(i);
+                    process();
+                }
+            } catch (RemoteException e) {
+                e.printStackTrace();
             }
         }
     }
 
-    public void processOrder(OrderManifest manifest) {
-        Set<RemoteBox.Type> types = manifest.getList().keySet();
+    public void processOrder(OrderManifest manifest) throws RemoteException {
+        Set<BoxType> types = manifest.getList().keySet();
         order = new Order("randomId");
 
-        for (RemoteBox.Type boxType : types) {
+        for (BoxType boxType : types) {
             int quantity = manifest.getList().get(boxType);
             processingType = boxType;
             processingQty = quantity;

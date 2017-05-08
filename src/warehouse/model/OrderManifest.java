@@ -9,11 +9,11 @@ import java.util.HashMap;
 public class OrderManifest {
 
     private Order order;
-    private HashMap<RemoteBox.Type, Integer> list;
+    private HashMap<BoxType, Integer> list;
     private Date dueDate;
     private Date createdAt;
 
-    public OrderManifest(HashMap<RemoteBox.Type, Integer> list, Date dueDate) {
+    public OrderManifest(HashMap<BoxType, Integer> list, Date dueDate) {
         order = null;
         this.list = list;
         this.dueDate = dueDate;
@@ -28,7 +28,7 @@ public class OrderManifest {
         return order;
     }
 
-    public HashMap<RemoteBox.Type, Integer> getList() {
+    public HashMap<BoxType, Integer> getList() {
         return list;
     }
 }
