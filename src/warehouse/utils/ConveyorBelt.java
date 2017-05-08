@@ -2,6 +2,7 @@ package warehouse.utils;
 
 import warehouse.model.Palette;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Observable;
 
@@ -21,9 +22,12 @@ public class ConveyorBelt extends Observable {
         palettes = new ArrayList<>();
     }
 
-    public void put(Palette palette) {
+    public void put(Palette palette) throws RemoteException {
+        log("Sending palette to " + palette.getDestination().toString());
         palettes.add(palette);
-        this.notifyObservers();
+
+        setChanged();
+        notifyObservers();
     }
 
     public Palette get(int i) {
@@ -36,5 +40,9 @@ public class ConveyorBelt extends Observable {
 
     public int getPalettesNumber() {
         return palettes.size();
+    }
+
+    private void log(String message) {
+        System.out.println(this.getClass().getName() + ": " + message);
     }
 }

@@ -16,13 +16,13 @@ public class PickingStation implements Station {
     private Palette palette;
     private BoxType processingType;
     private int processingQty;
-    private ConveyorBelt belt = ConveyorBelt.getInstance();
+    private ConveyorBelt belt;
     private Crane crane;
     private Order order;
 
     public PickingStation(Crane crane) {
         this.crane = crane;
-        this.crane.setPickingStation(this);
+        belt = ConveyorBelt.getInstance();
     }
 
     @Override
@@ -43,7 +43,7 @@ public class PickingStation implements Station {
 
     @Override
     public void log(String message) {
-        System.out.println(message);
+        System.out.println(this.getClass().getName() + ": " + message);
     }
 
     @Override

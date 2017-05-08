@@ -14,16 +14,10 @@ import java.util.Observable;
 public class Crane implements Station {
 
     private Palette palette;
-    private PackingStation packingStation; //Just in case we need to send to the packing station
-    private PickingStation pickingStation;
-    private ConveyorBelt belt = ConveyorBelt.getInstance();
+    private ConveyorBelt belt;
 
-    public void setPackingStation(PackingStation packingStation) {
-        this.packingStation = packingStation;
-    }
-
-    public void setPickingStation(PickingStation pickingStation) {
-        this.pickingStation = pickingStation;
+    public Crane() {
+         belt = ConveyorBelt.getInstance();
     }
 
     @Override
@@ -35,14 +29,16 @@ public class Crane implements Station {
 
     @Override
     public void log(String message) {
-        System.out.println(message);
+        System.out.println(this.getClass().getName() + ": " + message);
     }
 
     @Override
     public void update(Observable observable, Object o) {
+        log("There is something on the conveyor belt !");
         for (int i = 0; i < belt.getPalettesNumber(); i++) {
             try {
                 if (belt.get(i).getDestination() == Destination.CRANE) {
+                    log("It is for me.");
                     palette = belt.remove(i);
                     process();
                 }

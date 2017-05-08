@@ -7,6 +7,7 @@ import warehouse.model.Box;
 import warehouse.model.BoxType;
 import warehouse.model.Palette;
 import warehouse.shared.RemoteInterface;
+import warehouse.utils.ConveyorBelt;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -27,8 +28,11 @@ public class Server extends UnicastRemoteObject implements RemoteInterface {
         super();
 
         crane = new Crane();
-        packingStation = new PackingStation(crane);
+        packingStation = new PackingStation();
         pickingStation = new PickingStation(crane);
+        ConveyorBelt.getInstance().addObserver(crane);
+        ConveyorBelt.getInstance().addObserver(packingStation);
+        ConveyorBelt.getInstance().addObserver(pickingStation);
     }
 
     public static void main(String args[]) {
@@ -53,7 +57,6 @@ public class Server extends UnicastRemoteObject implements RemoteInterface {
     @Override
     public void receive(ArrayList<Box> truck) {
         //Receive at packing station
-
         packingStation.receiveTruck(truck);
         packingStation.process();
     }

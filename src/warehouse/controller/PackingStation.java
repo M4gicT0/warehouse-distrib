@@ -16,13 +16,10 @@ import java.util.Observable;
 public class PackingStation implements Station {
 
     private ArrayList<Box> boxes;
-    private Crane crane;
     private ConveyorBelt belt;
 
-    public PackingStation(Crane crane) {
+    public PackingStation() {
         boxes = new ArrayList<>();
-        this.crane = crane;
-        this.crane.setPackingStation(this);
         belt = ConveyorBelt.getInstance();
     }
 
@@ -39,7 +36,7 @@ public class PackingStation implements Station {
             e.printStackTrace();
         }
 
-        /* TODO: Find an alternative solution to create palettes without using a capacity */
+        /* TODO: Find an alternative solution to create palettes without using a capacity. Verify that type is the same */
         for (Box box : boxes) {
             try {
                 if (palette.getCapacity() < (palette.getBoxesQty() + 1)) {
@@ -65,7 +62,7 @@ public class PackingStation implements Station {
 
     @Override
     public void log(String message) {
-        System.out.println(message);
+        System.out.println(this.getClass().getName() + ": " + message);
     }
 
     @Override

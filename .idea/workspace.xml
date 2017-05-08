@@ -2,19 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84f71878-100f-4acf-9b88-72fa1d783569" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/warehouse/model/BoxType.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/Crane.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/PackingStation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/PickingStation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/Station.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/StorageController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Box$Type.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Box.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Order.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/OrderManifest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Palette.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/utils/ConveyorBelt.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/utils/Destination.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/Server.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/Server.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/shared/RemoteInterface.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/shared/RemoteInterface.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/Server.java" afterPath="$PROJECT_DIR$/src/warehouse/Server.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/controller/Crane.java" afterPath="$PROJECT_DIR$/src/warehouse/controller/Crane.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/controller/PackingStation.java" afterPath="$PROJECT_DIR$/src/warehouse/controller/PackingStation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/controller/PickingStation.java" afterPath="$PROJECT_DIR$/src/warehouse/controller/PickingStation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/controller/StorageController.java" afterPath="$PROJECT_DIR$/src/warehouse/controller/StorageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/model/Order.java" afterPath="$PROJECT_DIR$/src/warehouse/model/Order.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/model/OrderManifest.java" afterPath="$PROJECT_DIR$/src/warehouse/model/OrderManifest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/model/Palette.java" afterPath="$PROJECT_DIR$/src/warehouse/model/Palette.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/model/RemoteBox.java" afterPath="$PROJECT_DIR$/src/warehouse/model/RemoteBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/model/RemotePalette.java" afterPath="$PROJECT_DIR$/src/warehouse/model/RemotePalette.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/shared/RemoteInterface.java" afterPath="$PROJECT_DIR$/src/warehouse/shared/RemoteInterface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/utils/ConveyorBelt.java" afterPath="$PROJECT_DIR$/src/warehouse/utils/ConveyorBelt.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,110 +34,85 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RemotePalette.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/warehouse/model/RemotePalette.java">
+      <file leaf-file-name="PickingStation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/warehouse/controller/PickingStation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="63" column="20" lean-forward="true" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+            <state relative-caret-position="1240">
+              <caret line="62" column="23" lean-forward="false" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1178#1179#0" expanded="true" />
+                <element signature="e#1256#1257#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemoteInterface.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/warehouse/shared/RemoteInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/warehouse/model/Order.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#648#649#0" expanded="true" />
-                <element signature="e#688#689#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderManifest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/warehouse/model/OrderManifest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Palette.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/warehouse/model/Palette.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RemoteBox.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/warehouse/model/RemoteBox.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/warehouse/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-358">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <element signature="e#1714#1715#0" expanded="true" />
-                <element signature="e#1741#1742#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Box.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/warehouse/model/Box.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="443">
+              <caret line="34" column="61" lean-forward="false" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1928#1929#0" expanded="true" />
+                <element signature="e#1955#1956#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BoxType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/warehouse/model/BoxType.java">
+      <file leaf-file-name="PackingStation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/warehouse/controller/PackingStation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="140">
-              <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+              <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1862#1863#0" expanded="true" />
+                <element signature="e#1940#1941#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Crane.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/warehouse/controller/Crane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#392#393#0" expanded="true" />
+                <element signature="e#442#443#0" expanded="true" />
+                <element signature="e#641#642#0" expanded="true" />
+                <element signature="e#719#720#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConveyorBelt.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/warehouse/utils/ConveyorBelt.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#387#388#0" expanded="true" />
+                <element signature="e#418#419#0" expanded="true" />
+                <element signature="e#980#981#0" expanded="true" />
+                <element signature="e#1058#1059#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Station.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/warehouse/controller/Station.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -140,8 +121,8 @@
       <file leaf-file-name="StorageController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/warehouse/controller/StorageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+            <state relative-caret-position="543">
+              <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -189,13 +170,13 @@
         <option value="$PROJECT_DIR$/src/warehouse/model/RemotePalette.java" />
         <option value="$PROJECT_DIR$/src/warehouse/model/Palette.java" />
         <option value="$PROJECT_DIR$/src/warehouse/shared/RemoteInterface.java" />
-        <option value="$PROJECT_DIR$/src/warehouse/utils/ConveyorBelt.java" />
         <option value="$PROJECT_DIR$/src/warehouse/controller/StorageController.java" />
-        <option value="$PROJECT_DIR$/src/warehouse/controller/Crane.java" />
-        <option value="$PROJECT_DIR$/src/warehouse/controller/PackingStation.java" />
-        <option value="$PROJECT_DIR$/src/warehouse/controller/PickingStation.java" />
         <option value="$PROJECT_DIR$/src/warehouse/model/Order.java" />
+        <option value="$PROJECT_DIR$/src/warehouse/utils/ConveyorBelt.java" />
         <option value="$PROJECT_DIR$/src/warehouse/Server.java" />
+        <option value="$PROJECT_DIR$/src/warehouse/controller/PackingStation.java" />
+        <option value="$PROJECT_DIR$/src/warehouse/controller/Crane.java" />
+        <option value="$PROJECT_DIR$/src/warehouse/controller/PickingStation.java" />
       </list>
     </option>
   </component>
@@ -609,12 +590,12 @@
       <workItem from="1493914448930" duration="1427000" />
       <workItem from="1493915972178" duration="2954000" />
       <workItem from="1493918952383" duration="4592000" />
-      <workItem from="1494261457411" duration="777000" />
+      <workItem from="1494261457411" duration="2513000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30670000" />
+    <option name="totallyTimeSpent" value="32406000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
@@ -622,10 +603,11 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19456522" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41413045" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -637,7 +619,6 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -703,8 +684,9 @@
         <state relative-caret-position="480">
           <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
           <folding>
-            <element signature="e#1714#1715#0" expanded="true" />
-            <element signature="e#1741#1742#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1928#1929#0" expanded="true" />
+            <element signature="e#1955#1956#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -715,6 +697,10 @@
           <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1058#1059#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -801,8 +787,9 @@
         <state relative-caret-position="340">
           <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
           <folding>
-            <element signature="e#1714#1715#0" expanded="true" />
-            <element signature="e#1741#1742#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1928#1929#0" expanded="true" />
+            <element signature="e#1955#1956#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -930,6 +917,10 @@
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1058#1059#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -965,86 +956,10 @@
     <entry file="file://$PROJECT_DIR$/src/warehouse/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/warehouse/server/security.policy" />
     <entry file="file://$PROJECT_DIR$/security.policy" />
-    <entry file="file://$PROJECT_DIR$/src/warehouse/utils/ConveyorBelt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/warehouse/utils/Destination.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/controller/Station.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/controller/Crane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/controller/PickingStation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="70" column="28" lean-forward="false" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/controller/PackingStation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="43" column="17" lean-forward="true" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/controller/StorageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/model/Box.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/model/BoxType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1081,20 +996,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/model/RemoteBox.java">
+    <entry file="file://$PROJECT_DIR$/src/warehouse/model/RemotePalette.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="520">
+          <caret line="63" column="20" lean-forward="false" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/model/RemotePalette.java">
+    <entry file="file://$PROJECT_DIR$/src/warehouse/model/BoxType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="63" column="20" lean-forward="true" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+        <state relative-caret-position="100">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/warehouse/model/Box.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1111,13 +1034,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/warehouse/model/RemoteBox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="65" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/warehouse/controller/Station.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/warehouse/controller/StorageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/warehouse/utils/ConveyorBelt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1058#1059#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/warehouse/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-358">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="443">
+          <caret line="34" column="61" lean-forward="false" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
           <folding>
-            <element signature="e#1714#1715#0" expanded="true" />
-            <element signature="e#1741#1742#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1928#1929#0" expanded="true" />
+            <element signature="e#1955#1956#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/warehouse/controller/Crane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#442#443#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#719#720#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/warehouse/controller/PackingStation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1862#1863#0" expanded="true" />
+            <element signature="e#1940#1941#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/warehouse/controller/PickingStation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1240">
+          <caret line="62" column="23" lean-forward="false" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1178#1179#0" expanded="true" />
+            <element signature="e#1256#1257#0" expanded="true" />
           </folding>
         </state>
       </provider>
