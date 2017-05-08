@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 
 /**
- * Created by transpalette on 5/8/17.
+ * Created by Theo on 5/8/17.
  */
 public class DatabaseManager {
 
@@ -36,6 +36,14 @@ public class DatabaseManager {
     }
 
     public boolean fetchPaletteAt(int aisleNumber, int[][] cell) {
+        return false;
+    }
+
+    public boolean getPaletteCount(int aisleNumber) {
+        return false;
+    }
+
+    public boolean fetchPaletteById(String id) {
         return false;
     }
 
