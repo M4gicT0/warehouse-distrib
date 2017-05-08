@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public interface Palette extends Remote {
 
     String getId() throws RemoteException;
+    ArrayList<Box> getBoxes() throws RemoteException;
     int getBoxesQty() throws RemoteException;
     boolean has(BoxType type, int qty) throws RemoteException;
     Destination getDestination() throws RemoteException;

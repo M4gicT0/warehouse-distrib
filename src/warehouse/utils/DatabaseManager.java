@@ -1,8 +1,10 @@
 package warehouse.utils;
 
+import warehouse.model.Box;
 import warehouse.model.BoxType;
 import warehouse.model.Palette;
 
+import java.rmi.RemoteException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -24,11 +26,37 @@ public class DatabaseManager {
         }
     }
 
-    public boolean insertPalette(Palette palette, int aisleNumber, int[][] cell) {
-        //insert each box with its palette id
-        //insert palette with aisle ID
+    public boolean addAisle() throws SQLException {
+        PreparedStatement statement = connection.prepareStatement("INSERT INTO AISLES(id) VALUE(NULL);");
 
-        return false;
+        return statement.execute();
+    }
+
+    /* Insert each box of the palette with their palette_id into aisle numbeer aisleNumber
+     * and at cell number cell[x][y].
+     */
+    public boolean insertPalette(Palette palette, int aisleNumber, int x, int y) throws RemoteException, SQLException {
+        boolean success = true;
+        String qry = "INSERT INTO PALETTES(id, aisle_id, x, y) VALUE(?, ?, ?, ?);";
+        PreparedStatement statement = connection.prepareStatement(qry);
+        statement.setString(1, palette.getId());
+        statement.setInt(2, aisleNumber);
+        statement.setInt(3, x);
+        statement.setInt(4, y);
+
+        statement.execute();
+
+        for (Box box : palette.getBoxes()) {
+            statement = connection.prepareStatement("INSERT INTO BOXES(id, palette_id, type) VALUE(?, ?, ?);");
+            statement.setString(1, box.getId());
+            statement.setString(2, palette.getId());
+            statement.setString(3, box.getType().toString());
+
+            if (!statement.execute())
+                success = false;
+        }
+
+        return success;
     }
 
     public boolean fetchPalette(BoxType type) {
@@ -55,7 +83,7 @@ public class DatabaseManager {
         statement.execute();
 
         qry = "CREATE TABLE PALETTES(" +
-                "id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY," +
+                "id VARCHAR(15) PRIMARY KEY," +
                 "aisle_id INT UNSIGNED NOT NULL," +
                 "x INT UNSIGNED NOT NULL," +
                 "y INT UNSIGNED NOT NULL," +
@@ -65,8 +93,8 @@ public class DatabaseManager {
         statement.execute();
 
         qry = "CREATE TABLE BOXES(" +
-                "id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY," +
-                "palette_id INT UNSIGNED NOT NULL," +
+                "id VARCHAR(15) PRIMARY KEY," +
+                "palette_id VARCHAR(15) NOT NULL," +
                 "type ENUM('COTTON', 'FOOD', 'WOOD', 'PAINT') NOT NULL," +
                 "FOREIGN KEY(palette_id) REFERENCES PALETTES(id) ON DELETE CASCADE);";
 

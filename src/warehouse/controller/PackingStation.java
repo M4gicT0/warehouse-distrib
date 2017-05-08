@@ -1,6 +1,7 @@
 package warehouse.controller;
 
 import warehouse.model.Box;
+import warehouse.model.BoxType;
 import warehouse.model.Palette;
 import warehouse.model.RemotePalette;
 import warehouse.utils.ConveyorBelt;
@@ -36,11 +37,14 @@ public class PackingStation implements Station {
             e.printStackTrace();
         }
 
+        BoxType previousType = null;
+
         /* TODO: Find an alternative solution to create palettes without using a capacity. Verify that type is the same */
         for (Box box : boxes) {
             try {
-                if (palette.getCapacity() < (palette.getBoxesQty() + 1)) {
+                if (palette.getCapacity() > (palette.getBoxesQty() + 1) && (box.getType() == previousType || previousType == null)) {
                     try {
+                        previousType = box.getType();
                         palette.addBox(box);
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -49,6 +53,8 @@ public class PackingStation implements Station {
                     belt.put(palette);
                     try {
                         palette = new RemotePalette(palette.getId().concat("0"), Destination.CRANE);
+                        palette.addBox(box);
+                        previousType = box.getType();
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
@@ -57,6 +63,14 @@ public class PackingStation implements Station {
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
+        }
+
+        //In case the last one hasn't been sent
+        try {
+            if (palette.getBoxesQty() > 0)
+                belt.put(palette);
+        } catch (RemoteException e) {
+            e.printStackTrace();
         }
     }
 

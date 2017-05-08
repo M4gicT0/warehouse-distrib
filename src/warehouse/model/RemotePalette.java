@@ -28,6 +28,11 @@ public class RemotePalette extends UnicastRemoteObject implements Palette {
         return id;
     }
 
+    @Override
+    public ArrayList<Box> getBoxes() throws RemoteException {
+        return boxes;
+    }
+
     public int getBoxesQty() {
         return boxesQty;
     }
