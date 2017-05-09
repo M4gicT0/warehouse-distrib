@@ -1,6 +1,6 @@
 package warehouse.DAO;
 
-import warehouse.model.RemoteBox;
+import warehouse.shared.model.RemoteBox;
 import warehouse.shared.model.Box;
 import warehouse.shared.model.BoxType;
 import warehouse.shared.model.Palette;
@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by Theo on 5/8/17.

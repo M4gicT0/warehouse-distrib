@@ -1,7 +1,4 @@
-package warehouse.model;
-
-import warehouse.shared.model.Box;
-import warehouse.shared.model.BoxType;
+package warehouse.shared.model;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

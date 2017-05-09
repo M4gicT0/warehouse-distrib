@@ -16,4 +16,5 @@ public interface RemoteInterface extends Remote {
     String sayHello() throws RemoteException;
     void receive(ArrayList<Box> truck) throws RemoteException;
     Palette unload(BoxType type, int quantity) throws RemoteException;
+    void resetDatabase() throws RemoteException;
 }
