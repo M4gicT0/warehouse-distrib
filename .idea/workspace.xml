@@ -7,21 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84f71878-100f-4acf-9b88-72fa1d783569" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Order.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/OrderManifest.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/Server.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/Server.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/PackingStation.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/PackingStation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/PickingStation.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/PickingStation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/shared/RemoteInterface.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/shared/RemoteInterface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/utils/DatabaseManager.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/utils/DatabaseManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/DAO/OrderDAO.java" afterPath="$PROJECT_DIR$/src/warehouse/DAO/OrderDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/DAO/PaletteDAO.java" afterPath="$PROJECT_DIR$/src/warehouse/DAO/PaletteDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/controller/StorageController.java" afterPath="$PROJECT_DIR$/src/warehouse/controller/StorageController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/utils/DatabaseManager.java" afterPath="$PROJECT_DIR$/src/warehouse/utils/DatabaseManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/webservices/PaletteRWS.java" afterPath="$PROJECT_DIR$/src/warehouse/webservices/PaletteRWS.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warehouse-distrib.iml" afterPath="$PROJECT_DIR$/warehouse-distrib.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/webservices/BoxRWS.java" afterPath="$PROJECT_DIR$/src/warehouse/webservices/BoxRWS.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/webservices/OrderRWS.java" afterPath="$PROJECT_DIR$/src/warehouse/webservices/OrderRWS.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,6 +68,20 @@
         <option name="myItemId" value="warehouse_db" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="warehouse_db@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="warehouse_db" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
       <PATH_ELEMENT>
         <option name="myItemId" value="BOXES" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
@@ -110,6 +112,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="BoxRWS.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/warehouse/webservices/BoxRWS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="423">
+              <caret line="38" column="91" lean-forward="false" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="91" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderRWS.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/warehouse/webservices/OrderRWS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="38" column="111" lean-forward="false" selection-start-line="38" selection-start-column="111" selection-end-line="38" selection-end-column="111" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="StorageController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/warehouse/controller/StorageController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -134,33 +160,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderManifest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/warehouse/shared/model/OrderManifest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PaletteRWS.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/warehouse/webservices/PaletteRWS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="40" column="101" lean-forward="false" selection-start-line="40" selection-start-column="101" selection-end-line="40" selection-end-column="101" />
+            <state relative-caret-position="251">
+              <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PaletteDAO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PaletteDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/warehouse/DAO/PaletteDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="840">
-              <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+              <caret line="42" column="9" lean-forward="false" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -168,35 +182,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatabaseManager.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DatabaseManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/warehouse/utils/DatabaseManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="26" column="71" lean-forward="false" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
+            <state relative-caret-position="371">
+              <caret line="199" column="57" lean-forward="false" selection-start-line="199" selection-start-column="57" selection-end-line="199" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1494362082196" expanded="true" signature="921:955" ph="INSERT INTO AISLES... " />
-                <marker date="1494362082196" expanded="true" signature="1286:1344" ph="INSERT INTO PALETTES... " />
-                <marker date="1494362082196" expanded="true" signature="1653:1723" ph="INSERT INTO BOXES... " />
-                <marker date="1494362082196" expanded="true" signature="2080:2143" ph="INSERT INTO ORDERS... " />
-                <marker date="1494362082196" expanded="true" signature="2473:2502" ph="UPDATE BOXES... " />
-                <marker date="1494362082196" expanded="true" signature="2795:2830" ph="SELECT * FRO... PALETTES" />
-                <marker date="1494362082196" expanded="true" signature="3425:3439" ph="SELECT * FRO... BOXES" />
-                <marker date="1494362082196" expanded="true" signature="3425:3447" ph="SELECT * FRO... PALETTES" />
-                <marker date="1494362082196" expanded="true" signature="3975:4013" ph="SELECT * FRO... BOXES" />
-                <marker date="1494362082196" expanded="true" signature="4611:4649" ph="SELECT * FRO... BOXES" />
-                <marker date="1494362082196" expanded="true" signature="5299:5318" ph="SELECT * FRO... BOXES" />
-                <marker date="1494362082196" expanded="true" signature="5781:5823" ph="DELETE FROM " />
-                <marker date="1494362082196" expanded="true" signature="6029:6065" ph="DELETE FROM " />
-                <marker date="1494362082196" expanded="true" signature="6262:6330" ph="CREATE TABLE... AISLES" />
-                <marker date="1494362082196" expanded="true" signature="6434:6657" ph="CREATE TABLE... PALETTES" />
-                <marker date="1494362082196" expanded="true" signature="6743:6840" ph="CREATE TABLE... ORDERS" />
-                <marker date="1494362082196" expanded="true" signature="6926:7263" ph="CREATE TABLE... BOXES" />
-                <marker date="1494362082196" expanded="true" signature="7491:7531" ph="SELECT * FRO... ORDERS" />
-                <marker date="1494362082196" expanded="true" signature="8110:8130" ph="SELECT * FRO... orders" />
-                <marker date="1494362082196" expanded="true" signature="8603:8640" ph="DELETE FROM " />
-                <marker date="1494362082196" expanded="true" signature="8946:9034" ph="SELECT * FRO... PALETTES" />
-                <marker date="1494362082196" expanded="true" signature="9496:9556" ph="DROP TABLE I... " />
+                <marker date="1494362621369" expanded="true" signature="921:955" ph="INSERT INTO AISLES... " />
+                <marker date="1494362621369" expanded="true" signature="1286:1344" ph="INSERT INTO PALETTES... " />
+                <marker date="1494362621369" expanded="true" signature="1653:1723" ph="INSERT INTO BOXES... " />
+                <marker date="1494362621369" expanded="true" signature="2080:2143" ph="INSERT INTO ORDERS... " />
+                <marker date="1494362621369" expanded="true" signature="2473:2502" ph="UPDATE BOXES... " />
+                <marker date="1494362621369" expanded="true" signature="2795:2830" ph="SELECT * FRO... PALETTES" />
+                <marker date="1494362621369" expanded="true" signature="3425:3439" ph="SELECT * FRO... BOXES" />
+                <marker date="1494362621369" expanded="true" signature="3425:3447" ph="SELECT * FRO... PALETTES" />
+                <marker date="1494362621369" expanded="true" signature="3975:4013" ph="SELECT * FRO... BOXES" />
+                <marker date="1494362621369" expanded="true" signature="4611:4649" ph="SELECT * FRO... BOXES" />
+                <marker date="1494362621369" expanded="true" signature="5299:5318" ph="SELECT * FRO... BOXES" />
+                <marker date="1494362621369" expanded="true" signature="5806:5848" ph="DELETE FROM " />
+                <marker date="1494362621369" expanded="true" signature="6054:6090" ph="DELETE FROM " />
+                <marker date="1494362621369" expanded="true" signature="6287:6355" ph="CREATE TABLE... AISLES" />
+                <marker date="1494362621369" expanded="true" signature="6459:6682" ph="CREATE TABLE... PALETTES" />
+                <marker date="1494362621369" expanded="true" signature="6768:6865" ph="CREATE TABLE... ORDERS" />
+                <marker date="1494362621369" expanded="true" signature="6951:7322" ph="CREATE TABLE... BOXES" />
+                <marker date="1494362621369" expanded="true" signature="7550:7590" ph="SELECT * FRO... ORDERS" />
+                <marker date="1494362621369" expanded="true" signature="8169:8189" ph="SELECT * FRO... orders" />
+                <marker date="1494362621369" expanded="true" signature="8662:8699" ph="DELETE FROM " />
+                <marker date="1494362621369" expanded="true" signature="9005:9093" ph="SELECT * FRO... PALETTES" />
+                <marker date="1494362621369" expanded="true" signature="9555:9615" ph="DROP TABLE I... " />
               </folding>
             </state>
           </provider>
@@ -217,6 +231,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="BoxDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/warehouse/DAO/BoxDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="warehouse_db.PALETTES" pinned="false" current-in-tab="false">
         <entry file="dbDummy://dbtable:/e37087d4/857c9e65-8c38-4cda-bc3b-b6bcec6f72dd/warehouse_db.PALETTES">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -228,28 +254,6 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Crane.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/warehouse/controller/Crane.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/warehouse/DAO/OrderDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="95" column="16" lean-forward="false" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -304,8 +308,6 @@
         <option value="$PROJECT_DIR$/src/warehouse/utils/Destination.java" />
         <option value="$PROJECT_DIR$/src/warehouse/shared/model/RemoteBox.java" />
         <option value="$PROJECT_DIR$/src/warehouse/utils/JSONUtil.java" />
-        <option value="$PROJECT_DIR$/src/warehouse/webservices/BoxRWS.java" />
-        <option value="$PROJECT_DIR$/src/warehouse/webservices/OrderRWS.java" />
         <option value="$PROJECT_DIR$/src/warehouse/DAO/BoxDAO.java" />
         <option value="$PROJECT_DIR$/src/warehouse/model/RemoteOrder.java" />
         <option value="$PROJECT_DIR$/src/warehouse/model/Order.java" />
@@ -322,8 +324,10 @@
         <option value="$PROJECT_DIR$/src/warehouse/DAO/OrderDAO.java" />
         <option value="$PROJECT_DIR$/src/warehouse/controller/StorageController.java" />
         <option value="$PROJECT_DIR$/src/warehouse/webservices/PaletteRWS.java" />
-        <option value="$PROJECT_DIR$/src/warehouse/utils/DatabaseManager.java" />
         <option value="$PROJECT_DIR$/src/warehouse/DAO/PaletteDAO.java" />
+        <option value="$PROJECT_DIR$/src/warehouse/webservices/BoxRWS.java" />
+        <option value="$PROJECT_DIR$/src/warehouse/webservices/OrderRWS.java" />
+        <option value="$PROJECT_DIR$/src/warehouse/utils/DatabaseManager.java" />
       </list>
     </option>
   </component>
@@ -949,12 +953,12 @@
       <workItem from="1493918952383" duration="4592000" />
       <workItem from="1494261457411" duration="14138000" />
       <workItem from="1494317827364" duration="6801000" />
-      <workItem from="1494350253926" duration="10731000" />
+      <workItem from="1494350253926" duration="11167000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61563000" />
+    <option name="totallyTimeSpent" value="61999000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -967,6 +971,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -979,7 +984,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17735043" sideWeight="0.7423913" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17735043" sideWeight="0.7423913" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17735043" sideWeight="0.25760868" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16880342" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1229,16 +1234,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/DAO/BoxDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1202">
-          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/warehouse/shared/model/Box.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -1333,26 +1328,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/webservices/BoxRWS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="45" column="5" lean-forward="false" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/webservices/OrderRWS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/warehouse/shared/RemoteInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1411,19 +1386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/e37087d4/857c9e65-8c38-4cda-bc3b-b6bcec6f72dd/warehouse_db.BOXES">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/e37087d4/857c9e65-8c38-4cda-bc3b-b6bcec6f72dd/warehouse_db.PALETTES">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1437,52 +1399,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/utils/DatabaseManager.java">
+    <entry file="file://$PROJECT_DIR$/src/warehouse/DAO/PaletteDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="26" column="71" lean-forward="false" selection-start-line="26" selection-start-column="71" selection-end-line="26" selection-end-column="71" />
+        <state relative-caret-position="840">
+          <caret line="42" column="9" lean-forward="false" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1494362082196" expanded="true" signature="921:955" ph="INSERT INTO AISLES... " />
-            <marker date="1494362082196" expanded="true" signature="1286:1344" ph="INSERT INTO PALETTES... " />
-            <marker date="1494362082196" expanded="true" signature="1653:1723" ph="INSERT INTO BOXES... " />
-            <marker date="1494362082196" expanded="true" signature="2080:2143" ph="INSERT INTO ORDERS... " />
-            <marker date="1494362082196" expanded="true" signature="2473:2502" ph="UPDATE BOXES... " />
-            <marker date="1494362082196" expanded="true" signature="2795:2830" ph="SELECT * FRO... PALETTES" />
-            <marker date="1494362082196" expanded="true" signature="3425:3439" ph="SELECT * FRO... BOXES" />
-            <marker date="1494362082196" expanded="true" signature="3425:3447" ph="SELECT * FRO... PALETTES" />
-            <marker date="1494362082196" expanded="true" signature="3975:4013" ph="SELECT * FRO... BOXES" />
-            <marker date="1494362082196" expanded="true" signature="4611:4649" ph="SELECT * FRO... BOXES" />
-            <marker date="1494362082196" expanded="true" signature="5299:5318" ph="SELECT * FRO... BOXES" />
-            <marker date="1494362082196" expanded="true" signature="5781:5823" ph="DELETE FROM " />
-            <marker date="1494362082196" expanded="true" signature="6029:6065" ph="DELETE FROM " />
-            <marker date="1494362082196" expanded="true" signature="6262:6330" ph="CREATE TABLE... AISLES" />
-            <marker date="1494362082196" expanded="true" signature="6434:6657" ph="CREATE TABLE... PALETTES" />
-            <marker date="1494362082196" expanded="true" signature="6743:6840" ph="CREATE TABLE... ORDERS" />
-            <marker date="1494362082196" expanded="true" signature="6926:7263" ph="CREATE TABLE... BOXES" />
-            <marker date="1494362082196" expanded="true" signature="7491:7531" ph="SELECT * FRO... ORDERS" />
-            <marker date="1494362082196" expanded="true" signature="8110:8130" ph="SELECT * FRO... orders" />
-            <marker date="1494362082196" expanded="true" signature="8603:8640" ph="DELETE FROM " />
-            <marker date="1494362082196" expanded="true" signature="8946:9034" ph="SELECT * FRO... PALETTES" />
-            <marker date="1494362082196" expanded="true" signature="9496:9556" ph="DROP TABLE I... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/warehouse/webservices/BoxRWS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="38" column="91" lean-forward="false" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/warehouse/webservices/OrderRWS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="38" column="111" lean-forward="false" selection-start-line="38" selection-start-column="111" selection-end-line="38" selection-end-column="111" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/warehouse/webservices/PaletteRWS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="40" column="101" lean-forward="false" selection-start-line="40" selection-start-column="101" selection-end-line="40" selection-end-column="101" />
+        <state relative-caret-position="251">
+          <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/DAO/PaletteDAO.java">
+    <entry file="dbDummy://dbtable:/e37087d4/857c9e65-8c38-4cda-bc3b-b6bcec6f72dd/warehouse_db.BOXES">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/warehouse/DAO/BoxDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="42" column="9" lean-forward="true" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+        <state relative-caret-position="323">
+          <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/warehouse/utils/DatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="199" column="57" lean-forward="false" selection-start-line="199" selection-start-column="57" selection-end-line="199" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1494362621369" expanded="true" signature="921:955" ph="INSERT INTO AISLES... " />
+            <marker date="1494362621369" expanded="true" signature="1286:1344" ph="INSERT INTO PALETTES... " />
+            <marker date="1494362621369" expanded="true" signature="1653:1723" ph="INSERT INTO BOXES... " />
+            <marker date="1494362621369" expanded="true" signature="2080:2143" ph="INSERT INTO ORDERS... " />
+            <marker date="1494362621369" expanded="true" signature="2473:2502" ph="UPDATE BOXES... " />
+            <marker date="1494362621369" expanded="true" signature="2795:2830" ph="SELECT * FRO... PALETTES" />
+            <marker date="1494362621369" expanded="true" signature="3425:3439" ph="SELECT * FRO... BOXES" />
+            <marker date="1494362621369" expanded="true" signature="3425:3447" ph="SELECT * FRO... PALETTES" />
+            <marker date="1494362621369" expanded="true" signature="3975:4013" ph="SELECT * FRO... BOXES" />
+            <marker date="1494362621369" expanded="true" signature="4611:4649" ph="SELECT * FRO... BOXES" />
+            <marker date="1494362621369" expanded="true" signature="5299:5318" ph="SELECT * FRO... BOXES" />
+            <marker date="1494362621369" expanded="true" signature="5806:5848" ph="DELETE FROM " />
+            <marker date="1494362621369" expanded="true" signature="6054:6090" ph="DELETE FROM " />
+            <marker date="1494362621369" expanded="true" signature="6287:6355" ph="CREATE TABLE... AISLES" />
+            <marker date="1494362621369" expanded="true" signature="6459:6682" ph="CREATE TABLE... PALETTES" />
+            <marker date="1494362621369" expanded="true" signature="6768:6865" ph="CREATE TABLE... ORDERS" />
+            <marker date="1494362621369" expanded="true" signature="6951:7322" ph="CREATE TABLE... BOXES" />
+            <marker date="1494362621369" expanded="true" signature="7550:7590" ph="SELECT * FRO... ORDERS" />
+            <marker date="1494362621369" expanded="true" signature="8169:8189" ph="SELECT * FRO... orders" />
+            <marker date="1494362621369" expanded="true" signature="8662:8699" ph="DELETE FROM " />
+            <marker date="1494362621369" expanded="true" signature="9005:9093" ph="SELECT * FRO... PALETTES" />
+            <marker date="1494362621369" expanded="true" signature="9555:9615" ph="DROP TABLE I... " />
           </folding>
         </state>
       </provider>

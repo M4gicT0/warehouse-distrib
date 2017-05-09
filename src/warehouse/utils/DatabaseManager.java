@@ -187,8 +187,6 @@ public class DatabaseManager {
 
 		String qry = "SELECT * FROM BOXES;";
 		PreparedStatement statement = connection.prepareStatement(qry);
-		statement.execute();
-
 		ResultSet res = statement.executeQuery();
 
 		if (!res.isBeforeFirst())
@@ -199,6 +197,7 @@ public class DatabaseManager {
 			hm.put("id", res.getString("id"));
 			hm.put("palette_id", res.getString("palette_id"));
 			hm.put("type", res.getString("type"));
+			hm.put("items_qty", res.getInt("items_qty"));
 
 			list.add(hm);
 		}
@@ -243,7 +242,7 @@ public class DatabaseManager {
 		statement.execute();
 
 		qry = "CREATE TABLE BOXES(" + "id VARCHAR(15) PRIMARY KEY," + "palette_id VARCHAR(15) NOT NULL,"
-				+ "type ENUM('COTTON', 'FOOD', 'WOOD', 'PAINT') NOT NULL," + "order_id VARCHAR(15) DEFAULT NULL,"
+				+ "type ENUM('COTTON', 'FOOD', 'WOOD', 'PAINT') NOT NULL," + "order_id VARCHAR(15) DEFAULT NULL, items_qty INT NOT NULL DEFAULT 1,"
 				+ "FOREIGN KEY(palette_id) REFERENCES PALETTES(id) ON DELETE CASCADE,"
 				+ "FOREIGN KEY(order_id) REFERENCES ORDERS(ID)  ON DELETE CASCADE);";
 

@@ -29,14 +29,14 @@ public class OrderRWS extends HttpServlet {
         String output = "";
         ServletOutputStream out = response.getOutputStream();
 
-        if (request.getContextPath().equals("/orders") || request.getContextPath().equals("/orders/")) {
+        if (request.getRequestURI().equals("/orders") || request.getRequestURI().equals("/orders/")) {
             ArrayList<RemoteOrder> remoteOrders = OrderDAO.getOrders();
 
             for (RemoteOrder remoteOrder : remoteOrders)
                 output += gson.toJson(remoteOrder);
 
-        } else if (request.getContextPath().startsWith("/orders/")) {
-            RemoteOrder remoteOrder = OrderDAO.getOrder(request.getContextPath().substring(request.getContextPath().lastIndexOf("/")));
+        } else if (request.getRequestURI().startsWith("/orders/")) {
+            RemoteOrder remoteOrder = OrderDAO.getOrder(request.getRequestURI().substring(request.getRequestURI().lastIndexOf("/")));
 
             output = gson.toJson(remoteOrder);
         }

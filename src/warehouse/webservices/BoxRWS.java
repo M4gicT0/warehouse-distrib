@@ -29,14 +29,14 @@ public class BoxRWS extends HttpServlet {
         String output = "";
         ServletOutputStream out = response.getOutputStream();
 
-        if (request.getContextPath().equals("/boxes") || request.getContextPath().equals("/boxes/")) {
+        if (request.getRequestURI().equals("/boxes") || request.getRequestURI().equals("/boxes/")) {
             ArrayList<Box> boxes = BoxDAO.getBoxes();
 
             for (Box box : boxes)
                 output += gson.toJson(box);
 
-        } else if (request.getContextPath().startsWith("/boxes/")) {
-            Box box = BoxDAO.getBox(request.getContextPath().substring(request.getContextPath().lastIndexOf("/")));
+        } else if (request.getRequestURI().startsWith("/boxes/")) {
+            Box box = BoxDAO.getBox(request.getRequestURI().substring(request.getRequestURI().lastIndexOf("/")));
 
             output = gson.toJson(box);
         }
