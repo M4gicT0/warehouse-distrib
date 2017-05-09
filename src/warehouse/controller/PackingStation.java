@@ -1,8 +1,8 @@
 package warehouse.controller;
 
-import warehouse.model.Box;
-import warehouse.model.BoxType;
-import warehouse.model.Palette;
+import warehouse.shared.model.Box;
+import warehouse.shared.model.BoxType;
+import warehouse.shared.model.Palette;
 import warehouse.model.RemotePalette;
 import warehouse.utils.ConveyorBelt;
 import warehouse.utils.Destination;

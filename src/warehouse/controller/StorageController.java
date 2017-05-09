@@ -1,7 +1,7 @@
 package warehouse.controller;
 
-import warehouse.model.BoxType;
-import warehouse.model.Palette;
+import warehouse.shared.model.BoxType;
+import warehouse.shared.model.Palette;
 import warehouse.utils.DatabaseManager;
 
 import java.rmi.RemoteException;

@@ -1,6 +1,6 @@
 package warehouse.utils;
 
-import warehouse.model.Palette;
+import warehouse.shared.model.Palette;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
