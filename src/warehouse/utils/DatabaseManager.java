@@ -1,9 +1,8 @@
 package warehouse.utils;
 
-import warehouse.model.Box;
-import warehouse.model.Order;
-import warehouse.model.Palette;
-
+import warehouse.shared.model.Box;
+import warehouse.shared.model.BoxType;
+import warehouse.shared.model.Palette;
 
 import java.rmi.RemoteException;
 import java.sql.Connection;

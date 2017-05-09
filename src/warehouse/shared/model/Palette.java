@@ -1,4 +1,4 @@
-package warehouse.model;
+package warehouse.shared.model;
 
 import warehouse.utils.Destination;
 

@@ -1,5 +1,7 @@
 package warehouse.model;
 
+import warehouse.shared.model.BoxType;
+
 import java.util.Date;
 import java.util.HashMap;
 

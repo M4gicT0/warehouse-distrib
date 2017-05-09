@@ -3,16 +3,18 @@ package warehouse;
 import warehouse.controller.Crane;
 import warehouse.controller.PackingStation;
 import warehouse.controller.PickingStation;
-import warehouse.model.Box;
-import warehouse.model.BoxType;
-import warehouse.model.Palette;
+import warehouse.shared.model.Box;
+import warehouse.shared.model.BoxType;
+import warehouse.shared.model.Palette;
 import warehouse.shared.RemoteInterface;
 import warehouse.utils.ConveyorBelt;
+import warehouse.utils.DatabaseManager;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -64,5 +66,17 @@ public class Server extends UnicastRemoteObject implements RemoteInterface {
     @Override
     public Palette unload(BoxType type, int quantity) {
         return null;
+    }
+
+    @Override
+    public void resetDatabase() throws RemoteException {
+        DatabaseManager db = new DatabaseManager();
+        try {
+            db.dropTables();
+            db.createTables();
+            db.addAisle();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

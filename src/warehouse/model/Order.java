@@ -1,5 +1,7 @@
 package warehouse.model;
 
+import warehouse.shared.model.Box;
+
 import java.util.ArrayList;
 import java.util.Date;
 

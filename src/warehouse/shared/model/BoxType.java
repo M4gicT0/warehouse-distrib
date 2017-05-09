@@ -1,4 +1,4 @@
-package warehouse.model;
+package warehouse.shared.model;
 
 /**
  * Created by transpalette on 5/8/17.
