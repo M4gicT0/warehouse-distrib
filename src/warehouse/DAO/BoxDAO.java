@@ -40,8 +40,8 @@ public class BoxDAO {
         return box;
     }
 
-    public static List<Box> getBoxes() {
-        List<Box> boxes = new LinkedList<>();
+    public static ArrayList<Box> getBoxes() {
+        ArrayList<Box> boxes = new ArrayList<>();
 
         try {
             ArrayList<HashMap<String, Object>> rows = db.getAllBoxes();

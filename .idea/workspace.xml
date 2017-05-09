@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84f71878-100f-4acf-9b88-72fa1d783569" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/warehouse/utils/JSONUtil.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/Server.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/Server.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/Crane.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/Crane.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/PackingStation.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/PackingStation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/PickingStation.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/controller/PickingStation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Order.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/Order.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/OrderManifest.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/model/OrderManifest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/shared/RemoteInterface.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/shared/RemoteInterface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/shared/model/Box.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/shared/model/Box.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/shared/model/BoxType.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/shared/model/BoxType.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/shared/model/Palette.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/shared/model/Palette.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/utils/ConveyorBelt.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/utils/ConveyorBelt.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/utils/DatabaseManager.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/utils/DatabaseManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/utils/Destination.class" afterPath="$PROJECT_DIR$/out/production/warehouse-distrib/warehouse/utils/Destination.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/DAO/BoxDAO.java" afterPath="$PROJECT_DIR$/src/warehouse/DAO/BoxDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/DAO/PaletteDAO.java" afterPath="$PROJECT_DIR$/src/warehouse/DAO/PaletteDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/webservices/BoxRWS.java" afterPath="$PROJECT_DIR$/src/warehouse/webservices/BoxRWS.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/warehouse/webservices/PaletteRWS.java" afterPath="$PROJECT_DIR$/src/warehouse/webservices/PaletteRWS.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -108,12 +93,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BoxRWS.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BoxRWS.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/warehouse/webservices/BoxRWS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-              <folding />
+            <state relative-caret-position="242">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,18 +130,18 @@
       <file leaf-file-name="PaletteRWS.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/warehouse/webservices/PaletteRWS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
+            <state relative-caret-position="122">
+              <caret line="24" column="52" lean-forward="true" selection-start-line="24" selection-start-column="52" selection-end-line="25" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BoxDAO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BoxDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/warehouse/DAO/BoxDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+            <state relative-caret-position="482">
+              <caret line="55" column="5" lean-forward="false" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -248,7 +235,6 @@
         <option value="$PROJECT_DIR$/src/warehouse/shared/model/Palette.java" />
         <option value="$PROJECT_DIR$/src/warehouse/shared/model/Box.java" />
         <option value="$PROJECT_DIR$/src/warehouse/utils/Destination.java" />
-        <option value="$PROJECT_DIR$/src/warehouse/webservices/BoxRWS.java" />
         <option value="$PROJECT_DIR$/src/warehouse/webservices/OrderRWS.java" />
         <option value="$PROJECT_DIR$/src/warehouse/controller/StorageController.java" />
         <option value="$PROJECT_DIR$/src/warehouse/shared/RemoteInterface.java" />
@@ -257,9 +243,10 @@
         <option value="$PROJECT_DIR$/src/warehouse/utils/DatabaseManager.java" />
         <option value="$PROJECT_DIR$/src/warehouse/DAO/OrderDAO.java" />
         <option value="$PROJECT_DIR$/src/warehouse/utils/JSONUtil.java" />
+        <option value="$PROJECT_DIR$/src/warehouse/DAO/PaletteDAO.java" />
         <option value="$PROJECT_DIR$/src/warehouse/webservices/PaletteRWS.java" />
         <option value="$PROJECT_DIR$/src/warehouse/DAO/BoxDAO.java" />
-        <option value="$PROJECT_DIR$/src/warehouse/DAO/PaletteDAO.java" />
+        <option value="$PROJECT_DIR$/src/warehouse/webservices/BoxRWS.java" />
       </list>
     </option>
   </component>
@@ -907,12 +894,12 @@
       <workItem from="1493918952383" duration="4592000" />
       <workItem from="1494261457411" duration="14138000" />
       <workItem from="1494317827364" duration="6801000" />
-      <workItem from="1494350253926" duration="3936000" />
+      <workItem from="1494350253926" duration="4699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54768000" />
+    <option name="totallyTimeSpent" value="55531000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
@@ -1374,26 +1361,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/webservices/BoxRWS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/warehouse/utils/JSONUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/warehouse/webservices/PaletteRWS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="48" column="36" lean-forward="false" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1418,10 +1389,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/warehouse/webservices/PaletteRWS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="24" column="52" lean-forward="true" selection-start-line="24" selection-start-column="52" selection-end-line="25" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/warehouse/DAO/BoxDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        <state relative-caret-position="482">
+          <caret line="55" column="5" lean-forward="false" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/warehouse/webservices/BoxRWS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -27,15 +27,11 @@ public class PaletteRWS extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*
-        *   Check if palettes/ or palettes/id
-        *   if palettes/ -> PaletteDAO.all(): foreach: JSONize and print
-        *   else if palettes/id -> PaletteDAO.getById(id): foreach: JSONize and print
-         */
+
         String output = "";
         ServletOutputStream out = response.getOutputStream();
 
-        if (request.getRequestURI().equals("/palettes") || request.getRequestURI().equals("/palettes/")) {
+        if (request.getContextPath().equals("/palettes") || request.getContextPath().equals("/palettes/")) {
             ArrayList<Palette> palettes = PaletteDAO.getPalettes();
 
             for (Palette palette : palettes) {
@@ -43,8 +39,8 @@ public class PaletteRWS extends HttpServlet {
                 output += gson.toJson(palette);
             }
 
-        } else if (request.getRequestURI().startsWith("/palettes/")) {
-            Palette p = new RemotePalette("p9p99", Destination.NONE);
+        } else if (request.getContextPath().startsWith("/palettes/")) {
+            Palette p = PaletteDAO.getPalette(request.getContextPath().substring(request.getContextPath().lastIndexOf("/")));
 
             output = gson.toJson(p);
         }
