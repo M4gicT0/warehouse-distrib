@@ -27,6 +27,7 @@ public class PaletteDAO {
 
         synchronized (PaletteDAO.class) {
             id = String.valueOf(Integer.valueOf(nextId) + 1);
+            nextId = id;
         }
 
         try {
@@ -58,8 +59,8 @@ public class PaletteDAO {
         return palette;
     }
 
-    public static List<Palette> getPalettes() {
-        List<Palette> palettes = new LinkedList<>();
+    public static ArrayList<Palette> getPalettes() {
+        ArrayList<Palette> palettes = new ArrayList<>();
 
         try {
             ArrayList<HashMap<String, Object>> rows = db.getAllPalettes();

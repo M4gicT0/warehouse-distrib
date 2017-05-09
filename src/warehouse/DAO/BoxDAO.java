@@ -1,12 +1,13 @@
 package warehouse.DAO;
 
 import warehouse.shared.model.Box;
+import warehouse.shared.model.BoxType;
+import warehouse.shared.model.RemoteBox;
 import warehouse.utils.DatabaseManager;
 
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.*;
-
-import com.sun.rowset.internal.Row;
 
 /**
  * Created by Theo on 5/8/17.
@@ -22,20 +23,19 @@ public class BoxDAO {
 
     public static Box getBox(String id) {
         Box box = null;
+        Map<String, Object> row = new HashMap<>();
 
         try {
-            Map<String, Object> row = db.getBoxById(id);
+            row = db.getBoxById(id);
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        //TODO: parse row fields and create box Object from them
-        
-        
-        
-
-        //box = new RemoteBox(stuff from above);
-        RemoteBox box = row.get(id);
+        try {
+            box = new RemoteBox((String) row.get("id"), (int) row.get("items_qty"), (BoxType) row.get("type"));
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
 
         return box;
     }
