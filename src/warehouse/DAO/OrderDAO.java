@@ -53,8 +53,8 @@ public class OrderDAO {
         return order;
     }
 
-    public static List<Order> getOrders() {
-        List<Order> orders = new LinkedList<>();
+    public static ArrayList<Order> getOrders() {
+        ArrayList<Order> orders = new ArrayList<>();
 
         try {
             ArrayList<HashMap<String, Object>> rows = db.getAllOrders();

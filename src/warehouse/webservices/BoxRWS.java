@@ -44,9 +44,4 @@ public class BoxRWS extends HttpServlet {
         out.println(output);
         out.flush();
     }
-
-    @Override
-    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 }
