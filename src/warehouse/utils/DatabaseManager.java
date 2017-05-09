@@ -59,6 +59,9 @@ public class DatabaseManager {
         return success;
     }
 
+    public boolean deletePalette(String id) {
+        return false;
+    }
 
     public boolean fetchPalette(BoxType type) {
         return false;

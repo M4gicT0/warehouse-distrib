@@ -1,5 +1,7 @@
 package warehouse.controller;
 
+import warehouse.DAO.BoxDAO;
+import warehouse.DAO.PaletteDAO;
 import warehouse.shared.model.BoxType;
 import warehouse.shared.model.Palette;
 import warehouse.utils.DatabaseManager;
@@ -17,6 +19,8 @@ public class StorageController {
     private int freeSlots;
     private int [][]slotsMatrix; //slotsMatrix[AisleNumber][cell]
     private DatabaseManager db;
+    private BoxDAO boxDAO;
+    private PaletteDAO paletteDAO;
 
     public StorageController() {
         db = new DatabaseManager();
@@ -32,13 +36,7 @@ public class StorageController {
 
     public void load(Palette palette) {
         // TODO: Implement algorithm (not required by assignment)
-        try {
-            db.insertPalette(palette, 1, 0, 0);
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        paletteDAO.createPalette();
     }
 
     public Palette unload(BoxType type, int qty) {
