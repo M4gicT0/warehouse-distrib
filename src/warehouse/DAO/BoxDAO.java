@@ -6,6 +6,8 @@ import warehouse.utils.DatabaseManager;
 import java.sql.SQLException;
 import java.util.*;
 
+import com.sun.rowset.internal.Row;
+
 /**
  * Created by Theo on 5/8/17.
  */
@@ -28,8 +30,12 @@ public class BoxDAO {
         }
 
         //TODO: parse row fields and create box Object from them
+        
+        
+        
 
         //box = new RemoteBox(stuff from above);
+        RemoteBox box = row.get(id);
 
         return box;
     }
