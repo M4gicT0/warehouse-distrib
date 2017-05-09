@@ -21,25 +21,14 @@ public class PaletteDAO {
         db = new DatabaseManager();
     }
 
-    public static Palette createPalette(int aisleNumber, int x, int y) {
-        String id;
-        Palette palette = null;
-
-        synchronized (PaletteDAO.class) {
-            id = String.valueOf(Integer.valueOf(nextId) + 1);
-            nextId = id;
-        }
-
+    public static void createPalette(Palette palette, int aisleNumber, int x, int y) {
         try {
-            palette = new RemotePalette(id, Destination.NONE);
             db.insertPalette(palette, aisleNumber, x, y);
         } catch (RemoteException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        return palette;
     }
 
 
@@ -54,7 +43,7 @@ public class PaletteDAO {
         }
 
         try {
-            palette = new RemotePalette((String) row.get("id"), Destination.NONE);
+            palette = new RemotePalette(id, Destination.NONE);
         } catch (RemoteException e) {
             e.printStackTrace();
         }

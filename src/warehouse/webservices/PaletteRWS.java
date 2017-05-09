@@ -29,7 +29,7 @@ public class PaletteRWS extends HttpServlet {
         String output = "";
         ServletOutputStream out = response.getOutputStream();
 
-        if (request.getContextPath().equals("/palettes") || request.getContextPath().equals("/palettes/")) {
+        if (request.getRequestURI().equals("/palettes") || request.getRequestURI().equals("/palettes/")) {
             ArrayList<Palette> palettes = PaletteDAO.getPalettes();
 
             for (Palette palette : palettes) {
@@ -37,8 +37,8 @@ public class PaletteRWS extends HttpServlet {
                 output += gson.toJson(palette);
             }
 
-        } else if (request.getContextPath().startsWith("/palettes/")) {
-            Palette p = PaletteDAO.getPalette(request.getContextPath().substring(request.getContextPath().lastIndexOf("/")));
+        } else if (request.getRequestURI().startsWith("/palettes/")) {
+            Palette p = PaletteDAO.getPalette(request.getRequestURI().substring(request.getRequestURI().lastIndexOf("/")));
 
             output = gson.toJson(p);
         }

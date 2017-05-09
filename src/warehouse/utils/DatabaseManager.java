@@ -24,6 +24,7 @@ public class DatabaseManager {
 
 	public DatabaseManager() {
 		try {
+			DriverManager.registerDriver(new com.mysql.jdbc.Driver ());
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/warehouse_db", "warehouse",
 					"warehouse");
 		} catch (SQLException e) {
@@ -91,7 +92,7 @@ public class DatabaseManager {
 
 		HashMap<String, Object> hm = new HashMap<String, Object>();
 
-		String qry = "SELECT * FROM PALETTES WHERE PALETTES.ID = ?;";
+		String qry = "SELECT * FROM PALETTES WHERE id = ?;";
 		PreparedStatement statement = connection.prepareStatement(qry);
 		statement.setString(1, id.toString());
 
@@ -114,10 +115,8 @@ public class DatabaseManager {
 		ArrayList<HashMap<String, Object>> list = new ArrayList<>();
 		HashMap<String, Object> hm = new HashMap<>();
 		
-		String qry = "SELECT * FROM BOXES;";
+		String qry = "SELECT * FROM PALETTES;";
 		PreparedStatement statement = connection.prepareStatement(qry);
-		statement.execute();
-		
 		ResultSet res = statement.executeQuery();
 		
 		if(!res.isBeforeFirst())
@@ -238,21 +237,18 @@ public class DatabaseManager {
 		statement = connection.prepareStatement(qry);
 		statement.execute();
 
+		qry = "CREATE TABLE ORDERS(" + "id VARCHAR(15) PRIMARY KEY," + "created_at DATE"+ ", proccessed_at DATE);";
+		statement = connection.prepareStatement(qry);
+
+		statement.execute();
+
 		qry = "CREATE TABLE BOXES(" + "id VARCHAR(15) PRIMARY KEY," + "palette_id VARCHAR(15) NOT NULL,"
 				+ "type ENUM('COTTON', 'FOOD', 'WOOD', 'PAINT') NOT NULL," + "order_id VARCHAR(15) DEFAULT NULL,"
 				+ "FOREIGN KEY(palette_id) REFERENCES PALETTES(id) ON DELETE CASCADE,"
-				+ "FOREIGN KEY(order_id) REFERENCES OREDERS(ID)  ON DELETE CASCADE);";
+				+ "FOREIGN KEY(order_id) REFERENCES ORDERS(ID)  ON DELETE CASCADE);";
 
 		statement = connection.prepareStatement(qry);
 		statement.execute();
-		
-		
-	 
-		qry = "CREATE TABLE ORDERS(" + "id VARCHAR(15) PRIMARY KEY," + "created_at DATE"+ ", proccessed_at DATE);";
-		statement = connection.prepareStatement(qry);
-		
-		statement.execute();
-		
 	}
 	
 	public HashMap<String, Object> getOrderById(String id) throws SQLException{
@@ -340,7 +336,7 @@ public class DatabaseManager {
 	}
 
 	public void dropTables() throws SQLException {
-		String qry = "DROP TABLE IF EXISTS BOXES, PALETTES, AISLES CASCADE;";
+		String qry = "DROP TABLE IF EXISTS BOXES, ORDERS, PALETTES, AISLES CASCADE;";
 
 		PreparedStatement statement = connection.prepareStatement(qry);
 		statement.execute();

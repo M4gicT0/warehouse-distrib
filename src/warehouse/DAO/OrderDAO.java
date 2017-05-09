@@ -35,6 +35,8 @@ public class OrderDAO {
             db.insertOrder(remoteOrder, boxes);
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (RemoteException e) {
+            e.printStackTrace();
         }
 
         return remoteOrder;
@@ -50,7 +52,11 @@ public class OrderDAO {
             e.printStackTrace();
         }
 
-        remoteOrder = new RemoteOrder(id, (Date) row.get("created_at"), (Date) row.get("processed_at"));
+        try {
+            remoteOrder = new RemoteOrder(id, (Date) row.get("created_at"), (Date) row.get("processed_at"));
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
         ArrayList<Box> boxes = new ArrayList<>();
         ArrayList<HashMap<String, Object>> rows = new ArrayList<>();
 
@@ -84,7 +90,11 @@ public class OrderDAO {
         }
 
         for(HashMap<String, Object> row : rows) {
-            remoteOrders.add(new RemoteOrder((String) row.get("id"), (Date) row.get("created_at"), (Date) row.get("processed_at")));
+            try {
+                remoteOrders.add(new RemoteOrder((String) row.get("id"), (Date) row.get("created_at"), (Date) row.get("processed_at")));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         }
 
         return remoteOrders;

@@ -1,5 +1,6 @@
 package warehouse.controller;
 
+import warehouse.DAO.PaletteDAO;
 import warehouse.shared.model.BoxType;
 import warehouse.shared.model.Palette;
 
@@ -19,7 +20,7 @@ public class StorageController {
 
     public void load(Palette palette) {
         // TODO: Implement algorithm (not required by assignment)
-        //PaletteDAO.createPalette();
+        PaletteDAO.createPalette(palette, 1, 0, 0);
     }
 
     public Palette unload(BoxType type, int qty) {
