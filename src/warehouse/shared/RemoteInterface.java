@@ -1,8 +1,8 @@
 package warehouse.shared;
 
+import warehouse.shared.model.RemoteOrder;
+import warehouse.model.OrderManifest;
 import warehouse.shared.model.Box;
-import warehouse.shared.model.BoxType;
-import warehouse.shared.model.Palette;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -15,6 +15,6 @@ public interface RemoteInterface extends Remote {
 
     String sayHello() throws RemoteException;
     void receive(ArrayList<Box> truck) throws RemoteException;
-    Palette unload(BoxType type, int quantity) throws RemoteException;
+    RemoteOrder order(OrderManifest orderManifest) throws RemoteException;
     void resetDatabase() throws RemoteException;
 }

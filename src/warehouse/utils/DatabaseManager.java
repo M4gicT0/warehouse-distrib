@@ -1,6 +1,6 @@
 package warehouse.utils;
 
-import warehouse.model.Order;
+import warehouse.shared.model.RemoteOrder;
 import warehouse.shared.model.Box;
 import warehouse.shared.model.Palette;
 
@@ -65,20 +65,20 @@ public class DatabaseManager {
 		return success;
 	}
 	
-	public boolean insertOrder(Order order, List<Box> boxes) throws SQLException{
+	public boolean insertOrder(RemoteOrder remoteOrder, List<Box> boxes) throws SQLException{
 		boolean success = true;
 		
 		String qry = "INSERT INTO ORDERS(id, created_at, processed_at) VALUE(?, ?, ?);";
 		PreparedStatement statement = connection.prepareStatement(qry);
-		statement.setString(1, order.getId());
-		statement.setDate(2, (Date) order.created_at());
-		statement.setDate(3, (Date) order.processed_at());
+		statement.setString(1, remoteOrder.getId());
+		statement.setDate(2, (Date) remoteOrder.created_at());
+		statement.setDate(3, (Date) remoteOrder.processed_at());
 		
 		statement.execute();
 
 		for (Box box : boxes) {
 			statement = connection.prepareStatement("UPDATE BOXES SET order_id = ?;");
-			statement.setString(1, order.getId());
+			statement.setString(1, remoteOrder.getId());
 
 			if (!statement.execute())
 				success = false;
@@ -154,7 +154,32 @@ public class DatabaseManager {
 		}
 		return hm;
 	}
-	
+
+	public ArrayList<HashMap<String, Object>> getBoxesByOrderId(String orderId) throws SQLException {
+		ArrayList<HashMap<String, Object>> list = new ArrayList<HashMap<String, Object>>();
+		HashMap<String, Object> hm = new HashMap<>();
+
+		String qry = "SELECT * FROM BOXES WHERE order_id = ?;";
+		PreparedStatement statement = connection.prepareStatement(qry);
+		statement.setString(1, orderId);
+		statement.execute();
+
+		ResultSet res = statement.executeQuery();
+
+		if (!res.isBeforeFirst())
+			return null;
+
+		while (res.next()) {
+
+			hm.put("id", res.getString("id"));
+			hm.put("palette_id", res.getString("palette_id"));
+			hm.put("type", res.getString("type"));
+
+			list.add(hm);
+		}
+
+		return list;
+	}
 
 	public ArrayList<HashMap<String, Object>> getAllBoxes() throws SQLException {
 

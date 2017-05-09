@@ -45,31 +45,40 @@ public class PaletteDAO {
 
     public static Palette getPalette(String id) {
         Palette palette = null;
+        Map<String, Object> row = new HashMap<>();
 
         try {
-            Map<String, Object> row = db.getPaletteById(id);
+            row = db.getPaletteById(id);
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        //TODO: parse row fields and create palette Object from them
-
-        //palette = new RemotePalette(stuff from above);
+        try {
+            palette = new RemotePalette((String) row.get("id"), Destination.NONE);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
 
         return palette;
     }
 
     public static ArrayList<Palette> getPalettes() {
         ArrayList<Palette> palettes = new ArrayList<>();
+        ArrayList<HashMap<String, Object>> rows = new ArrayList<>();
 
         try {
-            ArrayList<HashMap<String, Object>> rows = db.getAllPalettes();
+            rows = db.getAllPalettes();
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        //TODO: parse rows and create palette Object from them
-        //palettes.push(new RemotePalette(stuff from above));
+        for(HashMap<String, Object> row : rows) {
+            try {
+                palettes.add(new RemotePalette((String) row.get("id"), Destination.NONE));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
 
         return palettes;
     }

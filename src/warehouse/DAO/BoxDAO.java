@@ -42,21 +42,28 @@ public class BoxDAO {
 
     public static ArrayList<Box> getBoxes() {
         ArrayList<Box> boxes = new ArrayList<>();
+        ArrayList<HashMap<String, Object>> rows = new ArrayList<>();
 
         try {
-            ArrayList<HashMap<String, Object>> rows = db.getAllBoxes();
+            rows = db.getAllBoxes();
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        //TODO: parse rows and create box Object from them
-        //boxes.push(new RemoteBox(stuff from above));
+        for(HashMap<String, Object> row : rows) {
+            try {
+                boxes.add(new RemoteBox((String) row.get("id"), (int) row.get("items_qty"), (BoxType) row.get("type")));
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
 
         return boxes;
     }
 
     public static Box deleteBox(String id) {
         Box box = getBox(id);
+
         try {
             db.deleteBox(id);
         } catch (SQLException e) {

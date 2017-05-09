@@ -1,6 +1,7 @@
 package warehouse.model;
 
 import warehouse.shared.model.BoxType;
+import warehouse.shared.model.RemoteOrder;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -10,24 +11,24 @@ import java.util.HashMap;
  */
 public class OrderManifest {
 
-    private Order order;
+    private RemoteOrder remoteOrder;
     private HashMap<BoxType, Integer> list;
     private Date dueDate;
     private Date createdAt;
 
     public OrderManifest(HashMap<BoxType, Integer> list, Date dueDate) {
-        order = null;
+        remoteOrder = null;
         this.list = list;
         this.dueDate = dueDate;
         createdAt = new Date();
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setOrder(RemoteOrder remoteOrder) {
+        this.remoteOrder = remoteOrder;
     }
 
-    public Order getOrder() {
-        return order;
+    public RemoteOrder getOrder() {
+        return remoteOrder;
     }
 
     public HashMap<BoxType, Integer> getList() {

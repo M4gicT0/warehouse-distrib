@@ -3,7 +3,7 @@ package warehouse.webservices;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import warehouse.DAO.OrderDAO;
-import warehouse.model.Order;
+import warehouse.shared.model.RemoteOrder;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -30,15 +30,15 @@ public class OrderRWS extends HttpServlet {
         ServletOutputStream out = response.getOutputStream();
 
         if (request.getContextPath().equals("/orders") || request.getContextPath().equals("/orders/")) {
-            ArrayList<Order> orders = OrderDAO.getOrders();
+            ArrayList<RemoteOrder> remoteOrders = OrderDAO.getOrders();
 
-            for (Order order : orders)
-                output += gson.toJson(order);
+            for (RemoteOrder remoteOrder : remoteOrders)
+                output += gson.toJson(remoteOrder);
 
         } else if (request.getContextPath().startsWith("/orders/")) {
-            Order order = OrderDAO.getOrder(request.getContextPath().substring(request.getContextPath().lastIndexOf("/")));
+            RemoteOrder remoteOrder = OrderDAO.getOrder(request.getContextPath().substring(request.getContextPath().lastIndexOf("/")));
 
-            output = gson.toJson(order);
+            output = gson.toJson(remoteOrder);
         }
 
         out.println(output);
