@@ -1,7 +1,5 @@
 package warehouse.shared.model;
 
-import warehouse.shared.model.Box;
-
 import java.rmi.Remote;
 import java.util.ArrayList;
 import java.util.Date;

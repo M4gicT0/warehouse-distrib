@@ -1,8 +1,5 @@
-package warehouse.model;
+package warehouse.shared.model;
 
-import warehouse.shared.model.Box;
-import warehouse.shared.model.BoxType;
-import warehouse.shared.model.Palette;
 import warehouse.utils.Destination;
 
 import java.rmi.RemoteException;

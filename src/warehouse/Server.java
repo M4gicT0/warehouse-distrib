@@ -3,9 +3,7 @@ package warehouse;
 import warehouse.controller.Crane;
 import warehouse.controller.PackingStation;
 import warehouse.controller.PickingStation;
-import warehouse.shared.model.RemoteOrder;
-import warehouse.model.OrderManifest;
-import warehouse.shared.model.Box;
+import warehouse.shared.model.*;
 import warehouse.shared.RemoteInterface;
 import warehouse.utils.ConveyorBelt;
 import warehouse.utils.DatabaseManager;
@@ -64,7 +62,7 @@ public class Server extends UnicastRemoteObject implements RemoteInterface {
     }
 
     @Override
-    public RemoteOrder order(OrderManifest orderManifest) throws RemoteException {
+    public Order order(OrderManifest orderManifest) throws RemoteException {
         return pickingStation.processOrder(orderManifest);
     }
 

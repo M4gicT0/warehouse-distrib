@@ -1,9 +1,6 @@
 package warehouse.controller;
 
-import warehouse.model.*;
-import warehouse.shared.model.BoxType;
-import warehouse.shared.model.Palette;
-import warehouse.shared.model.RemoteOrder;
+import warehouse.shared.model.*;
 import warehouse.utils.ConveyorBelt;
 import warehouse.utils.Destination;
 
@@ -21,7 +18,7 @@ public class PickingStation implements Station {
     private int processingQty;
     private ConveyorBelt belt;
     private Crane crane;
-    private RemoteOrder remoteOrder;
+    private Order order;
 
     public PickingStation(Crane crane) {
         this.crane = crane;
@@ -32,7 +29,7 @@ public class PickingStation implements Station {
     public void process() {
         //Process each received palette: take the desired boxes and put them in a truck
         try {
-            remoteOrder.addBoxes(palette.removeBoxes(processingType, processingQty)); //Process [TYPE -> QTY]
+            order.addBoxes(palette.removeBoxes(processingType, processingQty)); //Process [TYPE -> QTY]
 
             if (palette.getBoxesQty() > 0) { //Send it back to the crane if not empty
                 palette.setDestination(Destination.CRANE);
@@ -63,9 +60,9 @@ public class PickingStation implements Station {
         }
     }
 
-    public RemoteOrder processOrder(OrderManifest manifest) throws RemoteException {
+    public Order processOrder(OrderManifest manifest) throws RemoteException {
         Set<BoxType> types = manifest.getList().keySet();
-        remoteOrder = new RemoteOrder("randomId");
+        order = new RemoteOrder("randomId");
 
         for (BoxType boxType : types) {
             int quantity = manifest.getList().get(boxType);
@@ -74,6 +71,6 @@ public class PickingStation implements Station {
             crane.fetch(boxType, quantity);
         }
 
-        return remoteOrder;
+        return order;
     }
 }

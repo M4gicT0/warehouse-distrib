@@ -3,7 +3,7 @@ package warehouse.controller;
 import warehouse.shared.model.Box;
 import warehouse.shared.model.BoxType;
 import warehouse.shared.model.Palette;
-import warehouse.model.RemotePalette;
+import warehouse.shared.model.RemotePalette;
 import warehouse.utils.ConveyorBelt;
 import warehouse.utils.Destination;
 
@@ -39,7 +39,7 @@ public class PackingStation implements Station {
 
         BoxType previousType = null;
 
-        /* TODO: Find an alternative solution to create palettes without using a capacity. Verify that type is the same */
+        /* TODO: Find an alternative solution to create palettes without using a capacity. Verify that type is the same. Crappy algorithm */
         for (Box box : boxes) {
             try {
                 if (palette.getCapacity() > (palette.getBoxesQty() + 1) && (box.getType() == previousType || previousType == null)) {

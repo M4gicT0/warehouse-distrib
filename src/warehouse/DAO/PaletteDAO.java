@@ -1,6 +1,6 @@
 package warehouse.DAO;
 
-import warehouse.model.RemotePalette;
+import warehouse.shared.model.RemotePalette;
 import warehouse.shared.model.Palette;
 import warehouse.utils.DatabaseManager;
 import warehouse.utils.Destination;

@@ -3,9 +3,7 @@ package warehouse.webservices;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import warehouse.DAO.PaletteDAO;
-import warehouse.model.RemotePalette;
 import warehouse.shared.model.Palette;
-import warehouse.utils.Destination;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
