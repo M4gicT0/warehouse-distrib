@@ -1,12 +1,8 @@
 package warehouse.DAO;
 
-import warehouse.shared.model.RemoteBox;
 import warehouse.shared.model.Box;
-import warehouse.shared.model.BoxType;
-import warehouse.shared.model.Palette;
 import warehouse.utils.DatabaseManager;
 
-import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.*;
 

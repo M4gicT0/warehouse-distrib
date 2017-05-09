@@ -4,7 +4,6 @@ import warehouse.model.Order;
 import warehouse.shared.model.Box;
 import warehouse.utils.DatabaseManager;
 
-import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -41,7 +40,11 @@ public class OrderDAO {
     public static Order getOrder(String id) {
         Order order = null;
 
-        Map<String, Object> row = db.getOrderById(id);
+        try {
+            Map<String, Object> row = db.getOrderById(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         //TODO: parse row fields and create order Object from them
 
@@ -53,7 +56,11 @@ public class OrderDAO {
     public static List<Order> getOrders() {
         List<Order> orders = new LinkedList<>();
 
-        ArrayList<Map<String, Object>> rows = db.getAllOrders();
+        try {
+            ArrayList<HashMap<String, Object>> rows = db.getAllOrders();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         //TODO: parse rows and create order Object from them
         //orders.push(new Order(stuff from above));
@@ -63,7 +70,11 @@ public class OrderDAO {
 
     public static Order deleteOrder(String id) {
         Order order = getOrder(id);
-        db.deleteOrder(id);
+        try {
+            db.deleteOrder(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         return order;
     }
