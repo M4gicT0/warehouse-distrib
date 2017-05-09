@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Theo on 5/8/17.
+ * Created by Theo on 5/9/17.
  */
-@WebServlet({ "/palettes", "/palettes/*" })
-public class PaletteRWS extends HttpServlet {
+@WebServlet({ "/orders", "/orders/*" })
+public class OrderRWS extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 

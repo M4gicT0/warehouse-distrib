@@ -20,7 +20,6 @@ public class StorageController {
     private int [][]slotsMatrix; //slotsMatrix[AisleNumber][cell]
     private DatabaseManager db;
     private BoxDAO boxDAO;
-    private PaletteDAO paletteDAO;
 
     public StorageController() {
         db = new DatabaseManager();
@@ -36,7 +35,7 @@ public class StorageController {
 
     public void load(Palette palette) {
         // TODO: Implement algorithm (not required by assignment)
-        paletteDAO.createPalette();
+        PaletteDAO.createPalette();
     }
 
     public Palette unload(BoxType type, int qty) {
