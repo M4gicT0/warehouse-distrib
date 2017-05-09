@@ -1,6 +1,5 @@
 package warehouse.controller;
 
-import warehouse.DAO.BoxDAO;
 import warehouse.shared.model.BoxType;
 import warehouse.shared.model.Palette;
 
@@ -13,7 +12,6 @@ public class StorageController {
 
     private int freeSlots;
     private int [][]slotsMatrix; //slotsMatrix[AisleNumber][cell]
-    private BoxDAO boxDAO;
 
     public StorageController() {
         //freeSlots = db.getPaletteCount(0); //Repeat for each aisle, and substract its capacity
