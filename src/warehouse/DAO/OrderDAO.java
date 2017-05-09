@@ -5,6 +5,7 @@ import warehouse.shared.model.Box;
 import warehouse.utils.DatabaseManager;
 
 import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.*;
 
 /**
@@ -30,7 +31,7 @@ public class OrderDAO {
         try {
             order = new Order(id);
             db.insertOrder(order, boxes);
-        } catch (RemoteException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 

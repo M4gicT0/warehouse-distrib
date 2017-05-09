@@ -7,10 +7,8 @@ import warehouse.shared.model.Palette;
 import warehouse.utils.DatabaseManager;
 
 import java.rmi.RemoteException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.sql.SQLException;
+import java.util.*;
 
 /**
  * Created by Theo on 5/8/17.
@@ -24,28 +22,14 @@ public class BoxDAO {
         db = new DatabaseManager();
     }
 
-    public static Box createBox(Palette palette, BoxType type) {
-        String id;
-        Box box = null;
-
-        synchronized (BoxDAO.class) {
-            id = String.valueOf(Integer.valueOf(nextId) + 1);
-        }
-
-        try {
-            box = new RemoteBox(id, 0, type);
-            db.insertBox(box, palette.getId());
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
-
-        return box;
-    }
-
     public static Box getBox(String id) {
         Box box = null;
 
-        Map<String, Object> row = db.getBoxById(id);
+        try {
+            Map<String, Object> row = db.getBoxById(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         //TODO: parse row fields and create box Object from them
 
@@ -57,7 +41,11 @@ public class BoxDAO {
     public static List<Box> getBoxes() {
         List<Box> boxes = new LinkedList<>();
 
-        ArrayList<Map<String, Object>> rows = db.getAllBoxes();
+        try {
+            ArrayList<HashMap<String, Object>> rows = db.getAllBoxes();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         //TODO: parse rows and create box Object from them
         //boxes.push(new RemoteBox(stuff from above));
@@ -67,7 +55,11 @@ public class BoxDAO {
 
     public static Box deleteBox(String id) {
         Box box = getBox(id);
-        db.deleteBox(id);
+        try {
+            db.deleteBox(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         return box;
     }

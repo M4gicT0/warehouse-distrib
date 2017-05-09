@@ -1,7 +1,7 @@
 package warehouse.utils;
 
+import warehouse.model.Order;
 import warehouse.shared.model.Box;
-import warehouse.shared.model.BoxType;
 import warehouse.shared.model.Palette;
 
 import java.rmi.RemoteException;
@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Theo on 5/8/17.
@@ -64,19 +65,24 @@ public class DatabaseManager {
 		return success;
 	}
 	
-	public boolean insertOrder(Order order) throws SQLException{
+	public boolean insertOrder(Order order, List<Box> boxes) throws SQLException{
 		boolean success = true;
 		
-		String qry = "INSERT INTO ORDERS(order_id, created_at, processed_at) VALUE(?, ?, ?);";
+		String qry = "INSERT INTO ORDERS(id, created_at, processed_at) VALUE(?, ?, ?);";
 		PreparedStatement statement = connection.prepareStatement(qry);
 		statement.setString(1, order.getId());
 		statement.setDate(2, (Date) order.created_at());
 		statement.setDate(3, (Date) order.processed_at());
 		
 		statement.execute();
-		
-		if(!statement.execute())
-			return false;
+
+		for (Box box : boxes) {
+			statement = connection.prepareStatement("UPDATE BOXES SET order_id = ?;");
+			statement.setString(1, order.getId());
+
+			if (!statement.execute())
+				success = false;
+		}
 		
 		return success;
 	}
@@ -103,7 +109,7 @@ public class DatabaseManager {
 		return hm;
 	}
 
-	public ArrayList<HashMap<String, Object>> getAllPalettes(String id) throws SQLException {
+	public ArrayList<HashMap<String, Object>> getAllPalettes() throws SQLException {
 		
 		ArrayList<HashMap<String, Object>> list = new ArrayList<>();
 		HashMap<String, Object> hm = new HashMap<>();
@@ -118,7 +124,7 @@ public class DatabaseManager {
 			return null;
 		
 		while(res.next()){
-			hm.put("id", id);
+			hm.put("id", res.getString("id"));
 			hm.put("aisle_id", res.getString("aisle_id"));
 			hm.put("x", res.getInt("x"));
 			hm.put("y", res.getInt("y"));
@@ -208,16 +214,16 @@ public class DatabaseManager {
 		statement.execute();
 
 		qry = "CREATE TABLE BOXES(" + "id VARCHAR(15) PRIMARY KEY," + "palette_id VARCHAR(15) NOT NULL,"
-				+ "type ENUM('COTTON', 'FOOD', 'WOOD', 'PAINT') NOT NULL," + "order_id VARCHAR(15) DEFAULT NULL"
-				+ "FOREIGN KEY(palette_id) REFERENCES PALETTES(id) ON DELETE CASCADE),"
-				+ "FOREIGN KEY(order_id) REFERENCES OREDERS(ID);";
+				+ "type ENUM('COTTON', 'FOOD', 'WOOD', 'PAINT') NOT NULL," + "order_id VARCHAR(15) DEFAULT NULL,"
+				+ "FOREIGN KEY(palette_id) REFERENCES PALETTES(id) ON DELETE CASCADE,"
+				+ "FOREIGN KEY(order_id) REFERENCES OREDERS(ID)  ON DELETE CASCADE);";
 
 		statement = connection.prepareStatement(qry);
 		statement.execute();
 		
 		
 	 
-		qry = "CREATE TABLE ORDERS(" + "id VARCHAR(15) PRIMARY KEY," + "created_at DATE"+ "proccessed_at DATE);";
+		qry = "CREATE TABLE ORDERS(" + "id VARCHAR(15) PRIMARY KEY," + "created_at DATE"+ ", proccessed_at DATE);";
 		statement = connection.prepareStatement(qry);
 		
 		statement.execute();
@@ -275,17 +281,17 @@ public class DatabaseManager {
 	
 	public void deleteOrder(String id) throws SQLException{
 		
-		String qry = "DETELE FROM ORDERS WHERE ORDER.ID = ?;";
+		String qry = "DELETE FROM ORDERS WHERE ORDER.ID = ?;";
 		PreparedStatement statement = connection.prepareStatement(qry);
 		statement.setString(1, id);
 		statement.execute();
 	}
 	
-	public HashMap<String, Object> getPaletteByCoord(String aisle_id, int x, int y) throws SQLException{
+	public HashMap<String, Object> getPaletteByCoordinates(String aisle_id, int x, int y) throws SQLException{
 		
 		HashMap<String, Object> hm = new HashMap<>();
 		
-		String qry = "SELECT * FROM PALETTE WHERE PALETTES.AISLE_ID = ?, PALETTES.X = ?, PALETTES.Y = ?;";
+		String qry = "SELECT * FROM PALETTES WHERE PALETTES.AISLE_ID = ? AND PALETTES.X = ? AND PALETTES.Y = ?;";
 		PreparedStatement statement = connection.prepareStatement(qry);
 		statement.setString(1, aisle_id);
 		statement.setInt(2, x);
@@ -304,8 +310,8 @@ public class DatabaseManager {
 			hm.put("y", y);
 			
 		}
+
 		return hm;
-		
 	}
 
 	public void dropTables() throws SQLException {

@@ -7,10 +7,7 @@ import warehouse.utils.Destination;
 
 import java.rmi.RemoteException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Theo on 5/8/17.
@@ -48,7 +45,11 @@ public class PaletteDAO {
     public static Palette getPalette(String id) {
         Palette palette = null;
 
-        Map<String, Object> row = db.getPaletteById(id);
+        try {
+            Map<String, Object> row = db.getPaletteById(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         //TODO: parse row fields and create palette Object from them
 
@@ -60,7 +61,11 @@ public class PaletteDAO {
     public static List<Palette> getPalettes() {
         List<Palette> palettes = new LinkedList<>();
 
-        ArrayList<Map<String, Object>> rows = db.getAllPalettes();
+        try {
+            ArrayList<HashMap<String, Object>> rows = db.getAllPalettes();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         //TODO: parse rows and create palette Object from them
         //palettes.push(new RemotePalette(stuff from above));
@@ -70,7 +75,11 @@ public class PaletteDAO {
 
     public static Palette deletePalette(String id) {
         Palette palette = getPalette(id);
-        db.deletePalette(id);
+        try {
+            db.deletePalette(id);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         return palette;
     }
